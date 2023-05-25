@@ -1,0 +1,38 @@
+
+<app-card Title="" Subtitles="">
+    <div>
+        <h1 *ngIf="match.roleMatch(['Applicant'])">view your Application here</h1>
+        <h1 *ngIf="match.roleMatch(['Staff','Sponsors','Admin'])">List Of Masjid Building Applications</h1>
+        
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr style="align-items: start;">
+                <!-- <th>User name</th> -->
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+    
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let masjid of masjids">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{masjid.date}}</td>
+                <td>{{masjid.time}}</td>
+                <td>{{masjid.status}}</td>
+                <td>
+                    <button  (click)="updateMasjid(masjid.id)" class="btn btn-primary">update</button>
+                    <button  (click)="deleteMasjid(masjid.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>
+                    <button  (click)="MasjidDetails(masjid.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
+                    <button *ngIf="match.roleMatch(['Staff','Admin'])" (click)="acceptApplication(masjid.id)" class="btn btn-success" style="margin-left: 10px;">Accept</button>
+                    <button *ngIf="match.roleMatch(['Staff','Admin'])" (click)="rejectApplication(masjid.id)" class="btn btn-danger" style="margin-left: 10px;">Reject</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</app-card>
+
+

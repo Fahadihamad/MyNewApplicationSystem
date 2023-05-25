@@ -1,0 +1,86 @@
+<h1 style="text-align: center;">Update Staff Details</h1>
+<div class="bootstrap-wrapper">
+
+    <div class="container">
+       
+        <div class="row">
+  
+        <div class="col-md-6 offset-md-3">
+          <mat-card> 
+            <div class="container">
+                <!-- <img src="../../../assets/pola.JPG.jpg" alt="" class="rounded-circle"> -->
+            </div>
+            <h1 class="text-center">Update here !!</h1>
+        <!-- {{users |json}} -->
+            
+            <form style="margin-bottom: 17px;" (ngSubmit)="formSubmit()">
+                <!-- UserName -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>User Name*</mat-label>
+                  <input
+                  required
+                  [(ngModel)]="staffs.userName"
+                  name="username"
+                   matInput placeholder="Enter here" /> 
+                   <mat-hint>user name must be unique</mat-hint>
+                </mat-form-field>
+                <!-- password -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User Password*</mat-label>
+                    <input
+                    [(ngModel)]="staffs.password"
+                  name="pass"
+                    type="password" matInput placeholder="Enter here" /> 
+                  </mat-form-field>
+                  <!-- first name -->
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>First Name*</mat-label>
+                    <input 
+                    [(ngModel)]="staffs.firstName"
+                  name="first"
+                    matInput placeholder="Enter here" /> 
+                  </mat-form-field>
+                  <!-- last name -->
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label> Last Name*</mat-label>
+                    <input 
+                    [(ngModel)]="staffs.lastName"
+                  name="last"
+                     matInput placeholder="Enter here" /> 
+                  </mat-form-field>
+                  <!-- Email -->
+                  
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email Address*</mat-label>
+                    <input
+                    [(ngModel)]="staffs.email"
+                  name="email"
+                     type="email" matInput placeholder="Enter here" /> 
+                  </mat-form-field>
+                  <!-- phone -->
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Phone Number*</mat-label>
+                    <input 
+                    [(ngModel)]="staffs.phone"
+                  name="phone"
+                     matInput placeholder="Enter here" /> 
+                  </mat-form-field>
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Staff_Id*</mat-label>
+                    <input
+                    [(ngModel)]="staffs.staffId"
+                  name="phoneS"
+                     matInput placeholder="Enter here" /> 
+                  </mat-form-field>
+                  <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Submit</button>
+                    <!-- <button style="margin-left: 20px;" mat-raised-button color="accent">Reset</button> -->
+                  </div>
+            </form>
+          </mat-card>
+  
+            </div>
+        </div>
+    </div>
+  </div>
+  

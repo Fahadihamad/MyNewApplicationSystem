@@ -1,0 +1,67 @@
+
+<app-card Title="" Subtitles="">
+
+    <h1>Your Profile details</h1>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="container text-center" >
+                <img src="../../../assets/images.jpg" alt=""
+                class="profile">
+            </div>
+            <div class="row">
+                <div class="col-md-10" offset-md-1>
+                    <h1 style="margin-top: 12px;text-align: center;margin-left: 20%;">{{login.getUsers().firstName}} {{login.getUsers().lastName}}</h1>
+                    <table class="table">
+                        <tr >
+
+                            <td>Username</td>
+
+                            <td>{{login.getUsers().userName}}</td>
+                        </tr>
+                        <tr >
+
+                            <td>First name</td>
+
+                            <td>{{login.getUsers().firstName}}</td>
+                        </tr>
+                        <tr >
+
+                            <td>Last name</td>
+
+                            <td>{{login.getUsers().lastName}}</td>
+                        </tr>
+                        <tr >
+
+                            <td>Full name</td>
+
+                            <td>{{login.getUsers().firstName}} {{login.getUsers().lastName}}</td>
+                        </tr>
+                        <tr >
+
+                            <td>Email</td>
+
+                            <td>{{login.getUsers().email}}</td>
+                        </tr>
+                        <tr >
+
+                            <td>Phone number</td>
+
+                            <td>{{login.getUsers().phone}}</td>
+                        </tr>
+                        
+
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary" style="margin-left: 36%;">Update</button>
+        <button mat-raised-button color="accent" style="margin-left: 4%;">Reset</button>
+
+
+    </mat-card-actions>
+</app-card>

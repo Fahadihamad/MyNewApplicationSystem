@@ -1,0 +1,29 @@
+img{
+    border-radius: 4px;
+    height: 123px;
+    width: 123px;
+    margin-left: 37%;
+    border: 5px solid brown;
+    margin-top: 30px;
+    
+
+}
+.full-width{
+    width: 100%;
+}
+button{
+    width: 45px;
+    
+}
+.register{
+    padding: 17px;
+}
+.reg{
+    margin-left: 15px;
+    margin-top: 19px;
+    width: 100%;
+}
+.reg a{
+    padding: 5%;
+    outline: none;
+}

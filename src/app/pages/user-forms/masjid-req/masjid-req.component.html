@@ -1,0 +1,217 @@
+
+<app-card title="" Subtitles="">
+  <div class="row" >
+    <div class="col-md-12">
+    <h1 style="text-align: center;">Please fill the form below to send your help Appplication for Masjid</h1>
+  </div>
+  </div>
+  <div class="container">
+    <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+<!-- <table class="example-full-width" cellspacing="0"><tr> -->
+  <div class="row" style="padding: 7px;">
+    <div class="col-md-4"> 
+    <!-- <td> -->
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Imam First name</mat-label>
+      <input matInput
+      [(ngModel)]="masjid.imam_firstName" name="first"
+      >
+    </mat-form-field>
+  <!-- </td> -->
+    </div>
+    <div class="col-md-4"> 
+    <!-- <td> -->
+    
+    
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Imam Second name</mat-label>
+      <input matInput
+      [(ngModel)]="masjid.imam_sectName" name="second"
+      >
+    </mat-form-field>
+  <!-- </td> -->
+    </div>
+    <div class="col-md-4"> 
+    <!-- <td> -->
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Imam Last name</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.imam_lasttName" name="last" 
+        >
+      </mat-form-field>
+    <!-- </td> -->
+      </div>
+    </div>
+  <!-- </tr> -->
+  <!-- <tr> -->
+    <!-- <td> -->
+      <div class="row">
+        <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant First name</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.assist_firstName" name="firsts"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td> -->
+      <!-- <td> -->
+        <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant Second name</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.assist_secName" name="seconds"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant Last name</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.assist_lastName" name="lasts"
+        >
+      </mat-form-field>
+        </div>
+    </div>
+    <!-- </td> -->
+  <!-- </tr> -->
+  <!-- <tr>
+    <td> -->
+      <div class="row">
+        <div class="col-md-4">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Imam phone number</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.imam_phone" name="iphone"
+        type="number" 
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-4"> 
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant phone number</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.assisst_phone" name="aphone"
+        type="number"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-4"> 
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Region</mat-label>
+        <input matInput 
+        [(ngModel)]="masjid.region" name="sheha"
+        >
+      </mat-form-field>
+        </div>
+    </div>
+    <!-- </td>
+  </tr>
+  <tr> -->
+    <!-- <td> -->
+      <div class="row">
+        <div class="col-md-3"> 
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>District</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.district" name="dist"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-3"> 
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Shehia</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.shehia" name="reg"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Street</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.street" name="stre"
+        >
+      </mat-form-field>
+      </div>
+    <!-- </td> -->
+  <!-- </tr> -->
+  <!-- <tr>
+    <td> -->
+      <div class="col-md-3">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.date" name="date"
+      type="date"
+        >
+      </mat-form-field>
+      </div>
+      </div>
+    <!-- </div>
+    </td>
+      <td> -->
+        <div class="row">
+          <div class="col-md-4">  
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Time</mat-label>
+        <input matInput
+        [(ngModel)]="masjid.time" name="time" 
+        type="datetime"
+        >
+        
+      </mat-form-field>
+          </div>
+    <!-- </td>
+  </tr> -->
+  <!-- <tr class="">
+    <td style="margin-left: 2px;"> -->
+      <div class="col-md-4"> 
+        <p>Sheha letter</p>
+        <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+        [(ngModel)]="masjid.letter"  (onchange)="onFileSelected($event)" accept=".jpg,.png"
+        >
+      </div>
+    <!-- </td>
+    
+    <td style="margin-left: 2px;"> -->
+      <div class="col-md-4"> 
+        <p>Masjid image</p>
+        <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+        (change)="onFileSelected($event)" accept=".jpg,.png"
+        >
+      </div>
+    </div>
+        <!-- <button (click)="onUpload()">Upload</button> -->
+    <!-- </td>
+
+  </tr> -->
+<!-- </table> -->
+
+    <!-- <input type="file" class="form-control-file border" name="file" style="width: 250px;"> -->
+  
+  <div class="containers">
+    <h2 style="text-align: center;">Write your description about your Application</h2>
+    <mat-form-field class="example-full-width" appearance="outline">Description
+        <textarea matInput [(ngModel)]="masjid.discription" name="discr"></textarea>
+      </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary">SUBMIT</button></div>
+</div>
+</form>
+</div>
+</app-card>
+<app-masjidreq-list></app-masjidreq-list>

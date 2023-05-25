@@ -1,0 +1,19 @@
+<mat-card style="background-color:  #0f172a;">
+    <mat-action-list style="color: aliceblue;">
+        <div mat-subheader>Menu</div>
+        <button style="" mat-list-item routerLink='/userdashh/userhome'><mat-icon mat-list-icon>home</mat-icon>Home</button>
+        <button mat-list-item routerLink='/userdashh/'><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+        <button mat-list-item routerLink='/userdashh/masjidreq' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>stars</mat-icon>Masjid-Build</button>
+        <button mat-list-item routerLink='/userdashh/madrasareq' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>pie_chart</mat-icon>Madrasa-Build</button>
+        <button mat-list-item routerLink='/userdashh/userhom' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>assignment_ind</mat-icon>For Orphans</button>
+        <button mat-list-item routerLink='/userdashh/userhom' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>pan_tool</mat-icon>Private Help</button>
+        <button mat-list-item routerLink='/userdashh/staffreg' *ngIf="match.roleMatch(['Admin'])"><mat-icon mat-list-icon>stars</mat-icon>Register_Staff</button>
+        <button mat-list-item routerLink='/userdashh/stafflist' *ngIf="match.roleMatch(['Admin'])"><mat-icon mat-list-icon>pie_chart</mat-icon>Staff-List</button>
+        <button mat-list-item routerLink='/userdashh/masjid' *ngIf="match.roleMatch(['Staff','Admin','Sponsors'])"><mat-icon mat-list-icon>stars</mat-icon>For Masjid</button>
+        <button mat-list-item routerLink='/userdashh/madrasa' *ngIf="match.roleMatch(['Staff','Admin','Sponsors'])"><mat-icon mat-list-icon>pie_chart</mat-icon>For Madrasa</button>
+        <button mat-list-item routerLink='/userdashh/orphan' *ngIf="match.roleMatch(['Staff','Admin','Sponsors'])"><mat-icon mat-list-icon>assignment_ind</mat-icon>For Orphans</button>
+        <button mat-list-item routerLink='/userdashh/private' *ngIf="match.roleMatch(['Staff','Admin','Sponsors'])"><mat-icon mat-list-icon>pan_tool</mat-icon> For Private</button>
+        <button mat-list-item routerLink='/userdashh/userhom' ><mat-icon mat-list-icon>restore</mat-icon>History</button>
+        <button mat-list-item><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+    </mat-action-list>
+</mat-card>

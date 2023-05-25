@@ -1,0 +1,27 @@
+.spacer{
+  flex: 1 1 auto;
+}
+.mat-toolbar{
+  display: flex;
+  color: aliceblue;
+  
+}
+.mat-raised-button{
+  padding-right: 12px;
+}
+.mgbt{
+  padding-left: 30px;
+}
+img{
+  border-radius: 4px;
+  height: 100px;
+  width: 100px;
+  margin-left:10%;
+  border: 5px solid white;
+  margin-top: 12px;
+  margin-bottom: 15px;
+}
+
+  
+
+  

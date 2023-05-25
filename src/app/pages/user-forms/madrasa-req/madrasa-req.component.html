@@ -1,0 +1,326 @@
+<!-- <app-card title="" Subtitles="">
+    <h1 style="text-align: center;">Please fill the form below to send your help Appplication for Madrasa</h1>
+    <form>
+<table class="example-full-width" cellspacing="0"><tr>
+    <td>
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Head First name</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+    <td>
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Head Second name</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+    <td>
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Head Last name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+  </tr>
+  <tr>
+    <td>
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant First name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant Second name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td>
+    
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant Last name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+  </tr>
+  <tr>
+    <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Head phone number</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant phone number</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Shehia</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+  </tr>
+  <tr>
+    <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>District</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Region</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Street</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+  </tr>
+  <tr>
+    <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Time</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+  </tr>
+  <tr class="">
+    <td style="margin-left: 2px;">
+        <p>Sheha letter</p>
+        <input type="file" class="form-control-file border" name="file" style="width: 250px;">
+    </td>
+    
+    <td style="margin-left: 2px;">
+        <p>Madrasa image</p>
+        <input type="file" class="form-control-file border" name="file" style="width: 250px;">
+    </td>
+
+  </tr>
+</table>
+
+    
+  
+  <div class="containers">
+    <h2 style="text-align: center;">Write your description about your Application</h2>
+    <mat-form-field class="example-full-width" appearance="outline">Description
+        <textarea matInput></textarea>
+      </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary">SUBMIT</button></div>
+</div>
+</form>
+</app-card>
+ -->
+
+ 
+<app-card title="" Subtitles="">
+  <div class="row" >
+    <div class="col-md-12">
+    <h1 style="text-align: center;">Please fill the form below to send your help Appplication for Madrasa building</h1>
+  </div>
+  </div>
+  <div class="container">
+    <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+<!-- <table class="example-full-width" cellspacing="0"><tr> -->
+  <div class="row" style="padding: 7px;">
+    <div class="col-md-4"> 
+    <!-- <td> -->
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Head Teacher First Name</mat-label>
+      <input matInput
+      [(ngModel)]="madrasa.head_firstName" name="first"
+      >
+    </mat-form-field>
+  <!-- </td> -->
+    </div>
+    <div class="col-md-4"> 
+    <!-- <td> -->
+    
+    
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Head Teacher Second Name</mat-label>
+      <input matInput
+      [(ngModel)]="madrasa.head_sectName" name="second"
+      >
+    </mat-form-field>
+  <!-- </td> -->
+    </div>
+    <div class="col-md-4"> 
+    <!-- <td> -->
+        
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Head Teacher Second Name</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.head_lasttName" name="last" 
+        >
+      </mat-form-field>
+    <!-- </td> -->
+      </div>
+    </div>
+  <!-- </tr> -->
+  <!-- <tr> -->
+    <!-- <td> -->
+      <div class="row">
+        <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant First name</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.assisthead_firstName" name="firsts"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td> -->
+      <!-- <td> -->
+        <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant Second name</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.assisthead_secName" name="seconds"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant Last name</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.assisthead_lastName" name="lasts"
+        >
+      </mat-form-field>
+        </div>
+    </div>
+    <!-- </td> -->
+  <!-- </tr> -->
+  <!-- <tr>
+    <td> -->
+      <div class="row">
+        <div class="col-md-4">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Head phone number</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.head_phone" name="iphone"
+        type="number" 
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-4"> 
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Assistant phone number</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.assissthead_phone" name="aphone"
+        type="number"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-4"> 
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Region</mat-label>
+        <input matInput 
+        [(ngModel)]="madrasa.region" name="sheha"
+        >
+      </mat-form-field>
+        </div>
+    </div>
+    <!-- </td>
+  </tr>
+  <tr> -->
+    <!-- <td> -->
+      <div class="row">
+        <div class="col-md-3"> 
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>District</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.district" name="dist"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-3"> 
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Shehia</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.shehia" name="reg"
+        >
+      </mat-form-field>
+        </div>
+    <!-- </td>
+      <td> -->
+        <div class="col-md-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Street</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.street" name="stre"
+        >
+      </mat-form-field>
+      </div>
+    <!-- </td> -->
+  <!-- </tr> -->
+  <!-- <tr>
+    <td> -->
+      <div class="col-md-3">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.date" name="date"
+      type="date"
+        >
+      </mat-form-field>
+      </div>
+      </div>
+    <!-- </div>
+    </td>
+      <td> -->
+        <div class="row">
+          <div class="col-md-4">  
+        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Time</mat-label>
+        <input matInput
+        [(ngModel)]="madrasa.time" name="time" 
+        type="datetime"
+        >
+        
+      </mat-form-field>
+          </div>
+    <!-- </td>
+  </tr> -->
+  <!-- <tr class="">
+    <td style="margin-left: 2px;"> -->
+      <div class="col-md-4"> 
+        <p>Sheha letter</p>
+        <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+        [(ngModel)]="madrasa.letter"  (onchange)="onFileSelected($event)" accept=".jpg,.png"
+        >
+      </div>
+    <!-- </td>
+    
+    <td style="margin-left: 2px;"> -->
+      <div class="col-md-4"> 
+        <p>Madrasa image</p>
+        <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+        (change)="onFileSelected($event)" accept=".jpg,.png"
+        >
+      </div>
+    </div>
+        <!-- <button (click)="onUpload()">Upload</button> -->
+    <!-- </td>
+
+  </tr> -->
+<!-- </table> -->
+
+    <!-- <input type="file" class="form-control-file border" name="file" style="width: 250px;"> -->
+  
+  <div class="containers">
+    <h2 style="text-align: center;">Write your description about your Application</h2>
+    <mat-form-field class="example-full-width" appearance="outline">Description
+        <textarea matInput [(ngModel)]="madrasa.discription" name="discr"></textarea>
+      </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary">SUBMIT</button></div>
+</div>
+</form>
+</div>
+</app-card>
+<app-madrasareq-list></app-madrasareq-list>
+
+

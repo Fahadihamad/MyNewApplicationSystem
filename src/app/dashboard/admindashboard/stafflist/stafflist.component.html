@@ -1,0 +1,37 @@
+<app-card Title="" Subtitles="">
+    <div>
+        <h1>List of Staffs available</h1>
+        <a routerLink="/admindashh/staffreg" style="margin-left: 2px;">Register New Staff</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr style="align-items: start;">
+                <!-- <th>User name</th> -->
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email id</th>
+                <!-- <th>password</th> -->
+                <!-- <th>Phone_number</th> -->
+                <!-- <th>Staff Id</th> -->
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let staffs of staff">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{staffs.firstName}}</td>
+                <td>{{staffs.lastName}}</td>
+                <td>{{staffs.email}}</td>
+                <!-- <td>{{staffs.password}}</td> -->
+                <!-- <td>{{staffs.phone}}</td> -->
+                <!-- <td>{{staffs.staffId}}</td> -->
+                <td>
+                    <button  (click)="updateStaff(staffs.id)" class="btn btn-primary">update</button>
+                    <button  (click)="deleteStaff(staffs.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>
+                    <button  (click)="staffDetails(staffs.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</app-card>

@@ -1,0 +1,41 @@
+<app-card Title="" Subtitles="">
+    <div>
+        <h1 *ngIf="match.roleMatch(['Applicant'])">view your Application here</h1>
+        <h1 *ngIf="match.roleMatch(['Staff','Sponsors','Admin'])">List Of Madrasa Building Applications</h1>
+        
+    </div>
+    <div class="container"> 
+    <table class="table table-striped">
+        
+        <thead>
+            <tr style="align-items: start;">
+                <!-- <th>User name</th> -->
+                <th>Date</th>
+                <th>Time</th>
+                
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let madrasa of madrast">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{madrasa.date}}</td>
+                <td>{{madrasa.time}}</td>
+                
+                <td>{{madrasa.status}}</td>
+                <td data-label="Actions">
+                    <button  (click)="updateMadrasa(madrasa.id)" class="btn btn-primary" style="margin-left: 10px;">update</button>
+                    <button  (click)="deleteMadrasa(madrasa.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>
+                    <button  (click)="MadrasaDetails(madrasa.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
+                    <button (click)="acceptApplication(madrasa.id)" class="btn btn-success" style="margin-left: 10px;" *ngIf="match.roleMatch(['Staff','Admin'])">Accept</button>
+                    <button (click)="rejectApplication(madrasa.id)" class="btn btn-danger" style="margin-left: 10px;" *ngIf="match.roleMatch(['Staff','Admin'])">Reject</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</app-card>
+

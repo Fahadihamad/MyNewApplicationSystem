@@ -1,0 +1,120 @@
+<!-- <<mat-toolbar color="primary">
+    <a
+    routerLink="/"
+     mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+</a>
+
+    <span>Applications for help</span>
+    <span class="example-spacer"></span>
+    
+    <a
+    
+    [routerLink]="'login'"
+    *ngIf="! isLoggedIn()"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      login
+</a>
+    <a 
+    
+
+    [routerLink]="'sign'" 
+    *ngIf="! isLoggedIn()"
+    style="margin-right: 50px;margin-left: 20px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">
+      Register
+</a>
+
+<button
+    
+    *ngIf="isLoggedIn()"
+    (click)="logout()"
+    style="margin-right: 50px;margin-left: 20px;"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      Logout
+</button>
+<button
+    
+    *ngIf="isLoggedIn()"
+    mat-button
+    style="margin-right: 25px; margin-left: 20px;"
+    class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      {{login.getUsers().userName}}
+    </button>
+  </mat-toolbar>
+   -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-3">
+       <img src="../../../assets/pola.JPG.jpg" alt="logo">
+    </div>
+  </div>
+  <div class="col-md-9 col-sm-9 col-9 text-end ">
+    
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+    </div>
+    <div class="menu" [class.menuClass]="menuVariable">
+      <ul>
+        <li>Home</li>
+        <li>About </li>
+        <li>Contact</li>
+        <li>Gallery</li>
+        <li>Blog</li>
+        <li>Team</li>
+      </ul>
+    </div>
+  </div> -->
+  <div class="piss" fixed-top>
+  <div class="container" >
+  <mat-toolbar ></mat-toolbar>
+</div>
+  <div class="container">
+    <div class="second">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="../../../assets/flag.png" alt="" class="rounded-circle">
+        </div>
+        <div class="col-md-6">
+          <h2 style="text-align: center;margin-top: 12px;font-size: 30px;color:forestgreen;">Ofisi Ya Mufti Mkuu Wa Zanzibar</h2>
+          <p style="text-align: center;font-size: 24px;">The Grand Mufti's Of Zanzibar</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <mat-toolbar  class="mat-elavation-z6" style="background-color: forestgreen;">
+   <span><mat-icon>eco</mat-icon> For Helps</span>
+   <div class="spacer"></div>
+   <a mat-button routerLink="/">Home</a>
+   <a mat-button routerLink="/about">About us</a>
+   <a mat-button routerLink="/contact">Contacts</a>
+   <a mat-button routerLink="/gallery">Gallery</a>
+   <a mat-button routerLink="/service">Services</a>
+   <a mat-button routerLink="/team">Team</a>
+   <a
+   [routerLink]="'login'"
+   *ngIf="! isLoggedIn()"
+   mat-raised-button color="accent">Login</a>
+   <a
+   *ngIf="isLoggedIn()"
+   (click)="logout()"
+   mat-raised-button color="accent">Logout</a>
+   <a
+   *ngIf="isLoggedIn()"
+    mat-raised-button class="mgbt" color="success">{{login.getUsers().userName}}</a>
+    <!-- <a
+    [routerLink]="'sign'"
+    *ngIf="! isLoggedIn()"
+    mat-raised-button color="accent">Signup</a> -->
+    
+  </mat-toolbar>
+   <div class="app-body">
+    <router-outlet></router-outlet>
+   </div>
+  </div>
