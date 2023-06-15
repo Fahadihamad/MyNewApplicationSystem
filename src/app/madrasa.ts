@@ -20,4 +20,5 @@ export class Madrasa {
      assisthead_secName:string;
      assisthead_lastName:string;
      assissthead_phone:string;
+     name:string;
 }

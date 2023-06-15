@@ -70,12 +70,18 @@
       </ul>
     </div>
   </div> -->
-  <div class="piss" fixed-top>
-  <div class="container" >
+
+
+
+
+
+
+  <div class="piss" fixed-top style="">
+  <div class="container" style="position: sticky;" >
   <mat-toolbar ></mat-toolbar>
 </div>
   <div class="container">
-    <div class="second">
+    <div class="second" *ngIf="! isLoggedIn()">
       <div class="row">
         <div class="col-md-3">
           <img src="../../../assets/flag.png" alt="" class="rounded-circle">
@@ -84,36 +90,65 @@
           <h2 style="text-align: center;margin-top: 12px;font-size: 30px;color:forestgreen;">Ofisi Ya Mufti Mkuu Wa Zanzibar</h2>
           <p style="text-align: center;font-size: 24px;">The Grand Mufti's Of Zanzibar</p>
         </div>
+        <div class="col-md-3">
+          <img src="../../../assets/smz.jpg" alt="" class="rounded-circle" style="margin-left: 50%;">
+        </div>
         
       </div>
     </div>
   </div>
-  <mat-toolbar  class="mat-elavation-z6" style="background-color: forestgreen;">
-   <span><mat-icon>eco</mat-icon> For Helps</span>
-   <div class="spacer"></div>
-   <a mat-button routerLink="/">Home</a>
-   <a mat-button routerLink="/about">About us</a>
-   <a mat-button routerLink="/contact">Contacts</a>
-   <a mat-button routerLink="/gallery">Gallery</a>
-   <a mat-button routerLink="/service">Services</a>
-   <a mat-button routerLink="/team">Team</a>
-   <a
+  
+
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: forestgreen; height: 80px;" >
+    <a  class="navbar-brand" href="#"><img  src="../../../assets/arabiclogo.png" alt="" class="rounded-circle" style="height: 70px;margin-top: 12px;width:60px ;padding-top: 0px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="color: aliceblue;">
+      <ul class="navbar-nav" style="">
+        <li class="nav-item" style="">
+          <a mat-button routerLink="/" style="color: aliceblue;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a mat-button routerLink="/about" style="color: aliceblue;">About us</a>
+        </li>
+        <li class="nav-item" >
+          <a mat-button routerLink="/service" style="color: aliceblue;">Services</a>
+        </li>
+        <li class="nav-item" >
+          <a mat-button routerLink="/contact" style="color: aliceblue;">Contacts</a>
+
+        </li>
+        <li class="nav-item" >
+          
+          <a mat-button routerLink="/gallery" style="color: aliceblue;" >Gallery</a>
+        </li>
+        <li class="nav-item">
+          
+          <a mat-button routerLink="/team" style="color: aliceblue;">Team</a>
+        </li>
+        <li class="nav-item">
+          <a
    [routerLink]="'login'"
    *ngIf="! isLoggedIn()"
    mat-raised-button color="accent">Login</a>
-   <a
-   *ngIf="isLoggedIn()"
-   (click)="logout()"
-   mat-raised-button color="accent">Logout</a>
-   <a
-   *ngIf="isLoggedIn()"
-    mat-raised-button class="mgbt" color="success">{{login.getUsers().userName}}</a>
-    <!-- <a
-    [routerLink]="'sign'"
-    *ngIf="! isLoggedIn()"
-    mat-raised-button color="accent">Signup</a> -->
-    
-  </mat-toolbar>
+   
+        </li>
+        <li class="nav-item"> 
+        <a
+        *ngIf="isLoggedIn()"
+        (click)="logout()"
+        mat-raised-button color="accent">Logout</a>
+        <a
+        *ngIf="isLoggedIn()"
+        
+         mat-raised-button class="mgbt" color="success">{{login.getUsers().userName}}<mat-icon>account_circle</mat-icon></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
    <div class="app-body">
     <router-outlet></router-outlet>
    </div>

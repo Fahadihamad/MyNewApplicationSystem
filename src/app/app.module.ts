@@ -20,11 +20,11 @@ import { NavbarComponent } from './Utils/navbar/navbar.component';
 import { FooterComponent } from './Utils/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
-import { authInterceptorProviders } from './services/auth.interceptor';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 
 import { Router, RouterModule } from '@angular/router';
@@ -38,10 +38,6 @@ import { StafflistComponent } from './dashboard/admindashboard/stafflist/staffli
 import { RegisterStaffComponent } from './dashboard/admindashboard/register-staff/register-staff.component';
 import { UpdateStaffComponent } from './dashboard/admindashboard/update-staff/update-staff.component';
 import { StaffdetailsComponent } from './dashboard/admindashboard/staffdetails/staffdetails.component';
-import { MadrasaReqListComponent } from './dashboard/staffdashboard/madrasa-req-list/madrasa-req-list.component';
-import { OrphansReqListComponent } from './dashboard/staffdashboard/orphans-req-list/orphans-req-list.component';
-import { PrivateReqListComponent } from './dashboard/staffdashboard/private-req-list/private-req-list.component';
-
 import { MasjidreqListComponent } from './pages/user-forms/masjidreq-list/masjidreq-list.component';
 import { MadrasareqListComponent } from './pages/user-forms/madrasareq-list/madrasareq-list.component';
 import { UpdateMasjidComponent } from './pages/user-forms/update-masjid/update-masjid.component';
@@ -56,6 +52,29 @@ import { UpdateMadrasaComponent } from './pages/user-forms/update-madrasa/update
 import { AcceptedMasjidComponent } from './pages/user-forms/accepted-masjid/accepted-masjid.component';
 import { AcceptedMadrasaComponent } from './pages/user-forms/accepted-madrasa/accepted-madrasa.component';
 import { MadrasaDetailsComponent } from './pages/user-forms/madrasa-details/madrasa-details.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { DashboardComponent } from './pages/user-forms/dashboard/dashboard.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { OrphanReqComponent } from './pages/user-forms/orphan-req/orphan-req.component';
+import { PrivateReqComponent } from './pages/user-forms/private-req/private-req.component';
+import { PrivateListComponent } from './pages/user-forms/private-list/private-list.component';
+import { OrphanListComponent } from './pages/user-forms/orphan-list/orphan-list.component';
+import { OrphanAcceptedComponent } from './pages/user-forms/orphan-accepted/orphan-accepted.component';
+import { PrivateAcceptedComponent } from './pages/user-forms/private-accepted/private-accepted.component';
+import { PrivateDetailsComponent } from './pages/user-forms/private-details/private-details.component';
+import { OrphanDetailsComponent } from './pages/user-forms/orphan-details/orphan-details.component';
+import { OrphanUpdateComponent } from './pages/user-forms/orphan-update/orphan-update.component';
+import { PrivateUpdateComponent } from './pages/user-forms/private-update/private-update.component';
+import { RejectedMasjidComponent } from './pages/user-forms/rejected-masjid/rejected-masjid.component';
+import { RejectedMadrasaComponent } from './pages/user-forms/rejected-madrasa/rejected-madrasa.component';
+import { RejectedOrphanComponent } from './pages/user-forms/rejected-orphan/rejected-orphan.component';
+import { RejectedPrivateComponent } from './pages/user-forms/rejected-private/rejected-private.component';
+import { AuthGuard } from './auth.guard';
+import { UserService } from './services/user.service';
+import { LoginServiceService } from './services/login-service.service';
+
 
 
 @NgModule({
@@ -79,9 +98,7 @@ import { MadrasaDetailsComponent } from './pages/user-forms/madrasa-details/madr
     RegisterStaffComponent,
     UpdateStaffComponent,
     StaffdetailsComponent,
-    MadrasaReqListComponent,
-    OrphansReqListComponent,
-    PrivateReqListComponent,
+    
     
     MasjidreqListComponent,
     MadrasareqListComponent,
@@ -97,7 +114,22 @@ import { MadrasaDetailsComponent } from './pages/user-forms/madrasa-details/madr
     MasjidDetailsComponent,
     AcceptedMasjidComponent,
     AcceptedMadrasaComponent,
-    MadrasaDetailsComponent
+    MadrasaDetailsComponent,
+    DashboardComponent,
+    OrphanReqComponent,
+    PrivateReqComponent,
+    PrivateListComponent,
+    OrphanListComponent,
+    OrphanAcceptedComponent,
+    PrivateAcceptedComponent,
+    PrivateDetailsComponent,
+    OrphanDetailsComponent,
+    OrphanUpdateComponent,
+    PrivateUpdateComponent,
+    RejectedMasjidComponent,
+    RejectedMadrasaComponent,
+    RejectedOrphanComponent,
+    RejectedPrivateComponent
     
     
   ],
@@ -118,12 +150,23 @@ import { MadrasaDetailsComponent } from './pages/user-forms/madrasa-details/madr
     MatInputModule,
     MatSnackBarModule,
     RouterModule,
+    MatListModule,
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
     MatListModule
-    
     
 
   ],
-  providers: [authInterceptorProviders],
+  providers:[
+    AuthGuard,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    },
+    LoginServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,9 +15,6 @@ import { StafflistComponent } from './dashboard/admindashboard/stafflist/staffli
 import { UpdateStaffComponent } from './dashboard/admindashboard/update-staff/update-staff.component';
 import { StaffdetailsComponent } from './dashboard/admindashboard/staffdetails/staffdetails.component';
 
-import { MadrasaReqListComponent } from './dashboard/staffdashboard/madrasa-req-list/madrasa-req-list.component';
-import { OrphansReqListComponent } from './dashboard/staffdashboard/orphans-req-list/orphans-req-list.component';
-import { PrivateReqListComponent } from './dashboard/staffdashboard/private-req-list/private-req-list.component';
 
 import { UpdateMasjidComponent } from './pages/user-forms/update-masjid/update-masjid.component';
 import { MasjidDetailsComponent } from './pages/user-forms/masjid-details/masjid-details.component';
@@ -31,6 +28,23 @@ import { SrviceshomeComponent } from './pages/srviceshome/srviceshome.component'
 import { MadrasaDetailsComponent } from './pages/user-forms/madrasa-details/madrasa-details.component';
 import { UpdateMadrasaComponent } from './pages/user-forms/update-madrasa/update-madrasa.component';
 import { MadrasareqListComponent } from './pages/user-forms/madrasareq-list/madrasareq-list.component';
+import { AcceptedMasjidComponent } from './pages/user-forms/accepted-masjid/accepted-masjid.component';
+import { AcceptedMadrasaComponent } from './pages/user-forms/accepted-madrasa/accepted-madrasa.component';
+import { DashboardComponent } from './pages/user-forms/dashboard/dashboard.component';
+import { OrphanReqComponent } from './pages/user-forms/orphan-req/orphan-req.component';
+import { PrivateReqComponent } from './pages/user-forms/private-req/private-req.component';
+import { OrphanListComponent } from './pages/user-forms/orphan-list/orphan-list.component';
+import { PrivateListComponent } from './pages/user-forms/private-list/private-list.component';
+import { OrphanAcceptedComponent } from './pages/user-forms/orphan-accepted/orphan-accepted.component';
+import { PrivateAcceptedComponent } from './pages/user-forms/private-accepted/private-accepted.component';
+import { OrphanDetailsComponent } from './pages/user-forms/orphan-details/orphan-details.component';
+import { PrivateDetailsComponent } from './pages/user-forms/private-details/private-details.component';
+import { OrphanUpdateComponent } from './pages/user-forms/orphan-update/orphan-update.component';
+import { PrivateUpdateComponent } from './pages/user-forms/private-update/private-update.component';
+import { RejectedMasjidComponent } from './pages/user-forms/rejected-masjid/rejected-masjid.component';
+import { RejectedMadrasaComponent } from './pages/user-forms/rejected-madrasa/rejected-madrasa.component';
+import { RejectedOrphanComponent } from './pages/user-forms/rejected-orphan/rejected-orphan.component';
+import { RejectedPrivateComponent } from './pages/user-forms/rejected-private/rejected-private.component';
 
 const routes: Routes = [
   {
@@ -93,16 +107,36 @@ const routes: Routes = [
         component:MadrasaReqComponent
       },
       {
-        path:'madrasalist',
-        component:MadrasaReqListComponent
+        path:'orphanreq',
+        component:OrphanReqComponent
+      },
+      {
+        path:'privatereq',
+        component:PrivateReqComponent
       },
       {
         path:'updatemasjid/:id',
         component:UpdateMasjidComponent
       },
       {
+        path:'updateorphan/:id',
+        component:OrphanUpdateComponent
+      },
+      {
+        path:'updateprivate/:id',
+        component:PrivateUpdateComponent
+      },
+      {
         path:'view/:id',
         component:MasjidDetailsComponent
+      },
+      {
+        path:'orpView/:id',
+        component:OrphanDetailsComponent
+      },
+      {
+        path:'priView/:id',
+        component:PrivateDetailsComponent
       },
       {
         path:'staffreg',
@@ -129,13 +163,14 @@ const routes: Routes = [
         path:'madrasa',
         component:MadrasareqListComponent
       },
+      
       {
         path:'orphan',
-        component:OrphansReqListComponent
+        component:OrphanListComponent
       },
       {
         path:'private',
-        component:PrivateReqListComponent
+        component:PrivateListComponent
       },
       {
         path:'madrasaView/:id',
@@ -144,7 +179,44 @@ const routes: Routes = [
       {
         path:'updateMadrasa/:id',
         component:UpdateMadrasaComponent
-      }
+      },
+     {
+      path:'acceptmasjid',
+      component:AcceptedMasjidComponent
+     },
+     {
+      path:'acceptmadrasa',
+      component:AcceptedMadrasaComponent
+     },
+     
+     {
+      path:'acceptedorphan',
+      component:OrphanAcceptedComponent
+     },
+     {
+      path:'acceptedprivate',
+      component:PrivateAcceptedComponent
+     },
+     {
+      path:'rejectedMasjid',
+      component:RejectedMasjidComponent
+     },
+     {
+      path:'rejectedMadrasa',
+      component:RejectedMadrasaComponent
+     },
+     {
+      path:'rejectedOrphan',
+      component:RejectedOrphanComponent
+     },
+     {
+       path:'rejectedPrivate',
+       component:RejectedPrivateComponent
+     },
+     {
+      path:'dashboard',
+      component:DashboardComponent
+     }
       ]
      }
 ];

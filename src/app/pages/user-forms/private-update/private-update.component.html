@@ -1,0 +1,181 @@
+<app-card title="" Subtitles="">
+    <div class="row" >
+      <div class="col-md-12">
+      <h1 style="text-align: center;">Please Update Your form below to send your Personal Appplication</h1>
+    </div>
+    </div>
+    <div class="container">
+      <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+  <!-- <table class="example-full-width" cellspacing="0"><tr> -->
+    <div class="row" style="padding: 7px;">
+      <div class="col-md-4"> 
+      <!-- <td> -->
+          
+          <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>FIRST NAME</mat-label>
+        <input matInput
+        [(ngModel)]="private.per_firstName" name="first"
+        >
+      </mat-form-field>
+    <!-- </td> -->
+      </div>
+      <div class="col-md-4"> 
+      <!-- <td> -->
+      
+      
+          
+          <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>SECOND NAME</mat-label>
+        <input matInput
+        [(ngModel)]="private.per_sectName" name="second"
+        >
+      </mat-form-field>
+    <!-- </td> -->
+      </div>
+      <div class="col-md-4"> 
+      <!-- <td> -->
+          
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>LAST NAME</mat-label>
+          <input matInput
+          [(ngModel)]="private.per_lasttName" name="last" 
+          >
+        </mat-form-field>
+      <!-- </td> -->
+        </div>
+      </div>
+    <!-- </tr> -->
+    <!-- <tr> -->
+      <!-- <td> -->
+        <div class="row">
+          <div class="col-md-4">
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>PHONE NUMBER</mat-label>
+          <input matInput type="number"
+          [(ngModel)]="private.per_phone" name="firsts"
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td> -->
+        <!-- <td> -->
+          <div class="col-md-4">
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>HOUSE NUMBER</mat-label>
+          <input matInput
+          [(ngModel)]="private.per_houseNo" name="seconds"
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td>
+        <td> -->
+          <div class="col-md-4">
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>REGION</mat-label>
+          <input matInput
+          [(ngModel)]="private.region" name="lasts"
+          >
+        </mat-form-field>
+          </div>
+      </div>
+      <!-- </td> -->
+    <!-- </tr> -->
+    <!-- <tr>
+      <td> -->
+        <div class="row">
+          <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>DISTRICT</mat-label>
+          <input matInput
+          [(ngModel)]="private.district" name="iphone"
+          
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td>
+        <td> -->
+          <div class="col-md-4"> 
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>SHEHIA</mat-label>
+          <input matInput
+          [(ngModel)]="private.shehia" name="aphone"
+          
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td>
+        <td> -->
+          <div class="col-md-4"> 
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>STREET</mat-label>
+          <input matInput 
+          [(ngModel)]="private.street" name="sheha"
+          >
+        </mat-form-field>
+          </div>
+      </div>
+      <!-- </td>
+    </tr>
+    <tr> -->
+      <!-- <td> -->
+        <div class="row">
+        <div class="col-md-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>DATE</mat-label>
+          <input matInput
+          [(ngModel)]="private.date" name="date"
+        type="date"
+          >
+        </mat-form-field>
+        </div>
+            <div class="col-md-3">  
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>TIME</mat-label>
+          <input matInput
+          [(ngModel)]="private.time" name="time" 
+          type="datetime"
+          >
+          
+        </mat-form-field>
+            </div>
+      <!-- </td>
+    </tr> -->
+    <!-- <tr class="">
+      <td style="margin-left: 2px;"> -->
+        <div class="col-md-3"> 
+          <p>SHEHA LETTER</p>
+          <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+          [(ngModel)]="private.letter"   accept=".jpg,.png"
+          >
+        </div>
+      <!-- </td>
+      
+      <td style="margin-left: 2px;"> -->
+        <div class="col-md-3"> 
+          <p>PASSPORT SIZE</p>
+          <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+           accept=".jpg,.png"
+          >
+        </div>
+      </div>
+          <!-- <button (click)="onUpload()">Upload</button> -->
+      <!-- </td>
+  
+    </tr> -->
+  <!-- </table> -->
+  
+      <!-- <input type="file" class="form-control-file border" name="file" style="width: 250px;"> -->
+    
+    <div class="containers">
+      <h2 style="text-align: center;">Write your description about your Application</h2>
+      <mat-form-field class="example-full-width" appearance="outline">Description
+          <textarea matInput [(ngModel)]="private.discription" name="discr"></textarea>
+        </mat-form-field>
+      <div>
+          <button mat-raised-button color="primary">SUBMIT</button></div>
+  </div>
+  </form>
+  </div>
+  </app-card>
+  
+
+

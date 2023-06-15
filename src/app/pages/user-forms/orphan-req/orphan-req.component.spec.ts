@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MadrasaReqListComponent } from './madrasa-req-list.component';
+import { OrphanReqComponent } from './orphan-req.component';
 
-describe('MadrasaReqListComponent', () => {
-  let component: MadrasaReqListComponent;
-  let fixture: ComponentFixture<MadrasaReqListComponent>;
+describe('OrphanReqComponent', () => {
+  let component: OrphanReqComponent;
+  let fixture: ComponentFixture<OrphanReqComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MadrasaReqListComponent ]
+      declarations: [ OrphanReqComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MadrasaReqListComponent);
+    fixture = TestBed.createComponent(OrphanReqComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

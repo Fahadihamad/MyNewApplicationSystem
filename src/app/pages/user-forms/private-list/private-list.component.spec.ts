@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrphansReqListComponent } from './orphans-req-list.component';
+import { PrivateListComponent } from './private-list.component';
 
-describe('OrphansReqListComponent', () => {
-  let component: OrphansReqListComponent;
-  let fixture: ComponentFixture<OrphansReqListComponent>;
+describe('PrivateListComponent', () => {
+  let component: PrivateListComponent;
+  let fixture: ComponentFixture<PrivateListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrphansReqListComponent ]
+      declarations: [ PrivateListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OrphansReqListComponent);
+    fixture = TestBed.createComponent(PrivateListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

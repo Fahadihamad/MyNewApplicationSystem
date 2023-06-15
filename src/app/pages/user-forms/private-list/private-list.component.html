@@ -1,0 +1,42 @@
+<app-card Title="" Subtitles="">
+    <div>
+        <h1 *ngIf="match.roleMatch(['Applicant'])">view your Application here</h1>
+        <h1 *ngIf="match.roleMatch(['Staff','Sponsors','Admin'])">List Of Private Applications</h1>
+        
+    </div>
+    <div class="container"> 
+    <table class="table table-responsive">
+        
+        <thead>
+            <tr style="background-color: burlywood;">
+                <!-- <th>User name</th> -->
+                <th>Date</th>
+                <th>Time</th>
+                
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let private of privates">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{private.date}}</td>
+                <td>{{private.time}}</td>
+                
+                <td>{{private.status}}</td>
+                <td data-label="Actions">
+                    <button  (click)="updatePrivate(private.id)" class="btn btn-warning" >update</button>
+                    <button  (click)="deletePrivate(private.id)" class="btn btn-danger" >delete</button>
+                    <button  (click)="PrivateDetails(private.id)" class="btn btn-primary" >view</button>
+                    <button (click)="acceptApplication(private.id)" class="btn btn-success"  *ngIf="match.roleMatch(['Staff','Admin'])">Accept</button>
+                    <button (click)="rejectApplication(private.id)" class="btn btn-secondary" *ngIf="match.roleMatch(['Staff','Admin'])">Reject</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</app-card>
+
+

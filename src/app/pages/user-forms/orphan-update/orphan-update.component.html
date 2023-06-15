@@ -1,0 +1,180 @@
+<app-card title="" Subtitles="">
+    <div class="row" >
+      <div class="col-md-12">
+      <h1 style="text-align: center;">Please Update the form below to send your Orphan Appplication</h1>
+    </div>
+    </div>
+    <div class="container">
+      <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+  <!-- <table class="example-full-width" cellspacing="0"><tr> -->
+    <div class="row" style="padding: 7px;">
+      <div class="col-md-4"> 
+      <!-- <td> -->
+          
+          <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>FIRST NAME</mat-label>
+        <input matInput
+        [(ngModel)]="orphan.orp_firstName" name="first"
+        >
+      </mat-form-field>
+    <!-- </td> -->
+      </div>
+      <div class="col-md-4"> 
+      <!-- <td> -->
+      
+      
+          
+          <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>SECOND NAME</mat-label>
+        <input matInput
+        [(ngModel)]="orphan.orp_sectName" name="second"
+        >
+      </mat-form-field>
+    <!-- </td> -->
+      </div>
+      <div class="col-md-4"> 
+      <!-- <td> -->
+          
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>LAST NAME</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.orp_lasttName" name="last" 
+          >
+        </mat-form-field>
+      <!-- </td> -->
+        </div>
+      </div>
+    <!-- </tr> -->
+    <!-- <tr> -->
+      <!-- <td> -->
+        <div class="row">
+          <div class="col-md-4">
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>PHONE NUMBER</mat-label>
+          <input matInput type="number"
+          [(ngModel)]="orphan.orp_phone" name="hone"
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td> -->
+        <!-- <td> -->
+          <div class="col-md-4">
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>HOUSE NUMBER</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.houseNo" name="seconds"
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td>
+        <td> -->
+          <div class="col-md-4">
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>REGION</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.region" name="lasts"
+          >
+        </mat-form-field>
+          </div>
+      </div>
+      <!-- </td> -->
+    <!-- </tr> -->
+    <!-- <tr>
+      <td> -->
+        <div class="row">
+          <div class="col-md-4">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>DISTRICT</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.district" name="iphone"
+           
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td>
+        <td> -->
+          <div class="col-md-4"> 
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>SHEHIA</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.shehia" name="aphone"
+          
+          >
+        </mat-form-field>
+          </div>
+      <!-- </td>
+        <td> -->
+          <div class="col-md-4"> 
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>STREET</mat-label>
+          <input matInput 
+          [(ngModel)]="orphan.street" name="sheha"
+          >
+        </mat-form-field>
+          </div>
+      </div>
+      <!-- </td>
+    </tr>
+    <tr> -->
+      <!-- <td> -->
+        <div class="row">
+        <div class="col-md-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>DATE</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.date" name="date"
+        type="date"
+          >
+        </mat-form-field>
+        </div>
+            <div class="col-md-3">  
+          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>TIME</mat-label>
+          <input matInput
+          [(ngModel)]="orphan.time" name="time" 
+          type="datetime"
+          >
+          
+        </mat-form-field>
+            </div>
+      <!-- </td>
+    </tr> -->
+    <!-- <tr class="">
+      <td style="margin-left: 2px;"> -->
+        <div class="col-md-3"> 
+          <p>SHEHA LETTER</p>
+          <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+          [(ngModel)]="orphan.letter"   accept=".jpg,.png"
+          >
+        </div>
+      <!-- </td>
+      
+      <td style="margin-left: 2px;"> -->
+        <div class="col-md-3"> 
+          <p>PASSPORT SIZE</p>
+          <input type="file" class="form-control-file border" name="file" style="width: 250px;"
+           accept=".jpg,.png"
+          >
+        </div>
+      </div>
+          <!-- <button (click)="onUpload()">Upload</button> -->
+      <!-- </td>
+  
+    </tr> -->
+  <!-- </table> -->
+  
+      <!-- <input type="file" class="form-control-file border" name="file" style="width: 250px;"> -->
+    
+    <div class="containers">
+      <h2 style="text-align: center;">Write your description about your Application</h2>
+      <mat-form-field class="example-full-width" appearance="outline">Description
+          <textarea matInput [(ngModel)]="orphan.discription" name="discr"></textarea>
+        </mat-form-field>
+      <div>
+          <button mat-raised-button color="primary">SUBMIT</button></div>
+  </div>
+  </form>
+  </div>
+  </app-card>
+  
+

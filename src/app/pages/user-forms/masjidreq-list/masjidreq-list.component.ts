@@ -12,7 +12,7 @@ import { MasjidServiceService } from 'src/app/services/masjid-service.service';
 })
 export class MasjidreqListComponent implements OnInit {
 
-  masjids:Masjid[];
+  masjids:Masjid[]=[];
   constructor(private masjid:MasjidServiceService,private router:Router,public match:LoginServiceService,private snack:MatSnackBar){}
   ngOnInit(): void {
     this.getAllMasjid();

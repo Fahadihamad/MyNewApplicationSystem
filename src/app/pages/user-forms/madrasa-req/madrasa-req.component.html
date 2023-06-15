@@ -289,8 +289,12 @@
       <div class="col-md-4"> 
         <p>Sheha letter</p>
         <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-        [(ngModel)]="madrasa.letter"  (onchange)="onFileSelected($event)" accept=".jpg,.png"
+          (change)="onFileSelected($event)" accept=".jpg,.png"
         >
+        <!-- <button (click)="onUpload()">Upload</button>  -->
+        <!-- <input type="text" [(ngModel)]="madrasa.name" placeholder="Enter Name" /> -->
+        
+        
       </div>
     <!-- </td>
     
@@ -316,7 +320,7 @@
         <textarea matInput [(ngModel)]="madrasa.discription" name="discr"></textarea>
       </mat-form-field>
     <div>
-        <button mat-raised-button color="primary">SUBMIT</button></div>
+        <button mat-raised-button type="submit" color="primary" >SUBMIT</button></div>
 </div>
 </form>
 </div>

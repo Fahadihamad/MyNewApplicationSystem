@@ -9,12 +9,33 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-sidebar.component.css']
 })
 export class UserSidebarComponent {
-
+  
+  
   constructor(private router:Router, public match:LoginServiceService){
 
   }
-  ngOnInit(){
-    
+  isDropdownOpen: boolean = false;
+  isDropdownOpenList:boolean=false;
+  isDropdownOpenAvail:boolean=false;
+  isDropdownOpenStaff:boolean=false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
+  listDropdown() {
+    this.isDropdownOpenList = !this.isDropdownOpenList;
+  }
+  availDropdown(){
+    this.isDropdownOpenAvail = !this.isDropdownOpenAvail;
+  }
+  staffDropdown(){
+    this.isDropdownOpenStaff = !this.isDropdownOpenStaff;
+  }
+
+  
+  ngOnInit(){
+  
+  }
+ 
 
 }

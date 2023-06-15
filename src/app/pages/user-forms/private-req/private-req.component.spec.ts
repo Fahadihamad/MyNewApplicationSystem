@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrivateReqListComponent } from './private-req-list.component';
+import { PrivateReqComponent } from './private-req.component';
 
-describe('PrivateReqListComponent', () => {
-  let component: PrivateReqListComponent;
-  let fixture: ComponentFixture<PrivateReqListComponent>;
+describe('PrivateReqComponent', () => {
+  let component: PrivateReqComponent;
+  let fixture: ComponentFixture<PrivateReqComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrivateReqListComponent ]
+      declarations: [ PrivateReqComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PrivateReqListComponent);
+    fixture = TestBed.createComponent(PrivateReqComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

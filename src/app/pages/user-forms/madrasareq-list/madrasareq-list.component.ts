@@ -12,7 +12,7 @@ import { MadrasaServiceService } from 'src/app/services/madrasa-service.service'
 })
 export class MadrasareqListComponent implements OnInit {
 
-  madrast:Madrasa[];
+  madrast:Madrasa[]=[];
 
 constructor(private madrasaSrve:MadrasaServiceService,private router:Router,public match:LoginServiceService, private snack:MatSnackBar){}
 

@@ -1,1 +1,41 @@
-<p>accepted-masjid works!</p>
+<app-card Title="" Subtitles="">
+    <div>
+        
+        <h1 >List Of Masjid Building Applications</h1>
+        
+    </div>
+    <div class="container"> 
+    <table class="table table-striped">
+        
+        <thead>
+            <tr style="align-items: start;">
+                <!-- <th>User name</th> -->
+                <th>Date</th>
+                <th>Time</th>
+                
+                <th>Region</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let madrasa of masjids">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{madrasa.date}}</td>
+                <td>{{madrasa.time}}</td>
+                
+                <td>{{madrasa.region}}</td>
+                <td data-label="Actions">
+
+                    <button  (click)="MasjidDetails(madrasa.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
+       
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</app-card>
+
+
+

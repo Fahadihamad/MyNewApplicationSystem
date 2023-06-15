@@ -1,12 +1,21 @@
 <mat-card style="background-color:  #0f172a;">
-    <mat-action-list style="color: aliceblue;">
+    <!-- <mat-action-list style="color: aliceblue;">
         <div mat-subheader>Menu</div>
         <button style="" mat-list-item routerLink='/userdashh/userhome'><mat-icon mat-list-icon>home</mat-icon>Home</button>
         <button mat-list-item routerLink='/userdashh/'><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
-        <button mat-list-item routerLink='/userdashh/masjidreq' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>stars</mat-icon>Masjid-Build</button>
-        <button mat-list-item routerLink='/userdashh/madrasareq' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>pie_chart</mat-icon>Madrasa-Build</button>
-        <button mat-list-item routerLink='/userdashh/userhom' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>assignment_ind</mat-icon>For Orphans</button>
-        <button mat-list-item routerLink='/userdashh/userhom' *ngIf="match.roleMatch(['Applicant','Admin'])"><mat-icon mat-list-icon>pan_tool</mat-icon>Private Help</button>
+    <div class="dropdown">
+            <button mat-list-item  class="btn dropdown-toggle" type="button" dta-bs-toggle="dropdown" >
+                <mat-icon mat-list-icon>stars</mat-icon>  Send Application
+            </button>
+    <ul class="dropdown-menu-dark"> 
+       <li> <a class="dropdown-item" mat-list-item routerLink='/userdashh/masjidreq'>For Masjid</a></li>
+       <li> <a class="dropdown-item" mat-list-item routerLink='/userdashh/madrasareq' >For Madrasa</a></li>
+       <li> <a class="dropdown-item" mat-list-item routerLink='/userdashh/userhom' >For Orphans</a></li>
+        <li><a class="dropdown-item" mat-list-item routerLink='/userdashh/userhom' >For Private Help</a></li>
+         </ul>
+            
+         </div> 
+          
         <button mat-list-item routerLink='/userdashh/staffreg' *ngIf="match.roleMatch(['Admin'])"><mat-icon mat-list-icon>stars</mat-icon>Register_Staff</button>
         <button mat-list-item routerLink='/userdashh/stafflist' *ngIf="match.roleMatch(['Admin'])"><mat-icon mat-list-icon>pie_chart</mat-icon>Staff-List</button>
         <button mat-list-item routerLink='/userdashh/masjid' *ngIf="match.roleMatch(['Staff','Admin','Sponsors'])"><mat-icon mat-list-icon>stars</mat-icon>For Masjid</button>
@@ -15,5 +24,63 @@
         <button mat-list-item routerLink='/userdashh/private' *ngIf="match.roleMatch(['Staff','Admin','Sponsors'])"><mat-icon mat-list-icon>pan_tool</mat-icon> For Private</button>
         <button mat-list-item routerLink='/userdashh/userhom' ><mat-icon mat-list-icon>restore</mat-icon>History</button>
         <button mat-list-item><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
-    </mat-action-list>
+    </mat-action-list> -->
+    <div class="row" > 
+    <mat-sidenav-container>
+       
+            
+        <mat-sidenav #sidenav mode="side" opened style="width:15%;">
+            <div class="col-md-4" style="width: 100%;">
+          <mat-nav-list>
+           
+            <div mat-subheader>Menu</div>
+            <button mat-list-item routerLink='/userdashh/dashboard'><mat-icon mat-list-icon>dashboard</mat-icon>Dashboard</button>
+            <mat-divider></mat-divider>
+            <button mat-list-item routerLink='/userdashh/userhome'><mat-icon mat-list-icon>home</mat-icon>Home</button>
+            <button mat-list-item routerLink='/userdashh/'><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+            
+            <button mat-list-item class="btn dropdown-toggle" (click)="toggleDropdown()" *ngIf="match.roleMatch(['Admin','Applicant'])"><mat-icon mat-list-icon>add_circle</mat-icon>Send Application</button>
+            
+           <mat-list-item *ngIf="isDropdownOpen" routerLink='/userdashh/masjidreq'>For Masjid</mat-list-item>
+            <mat-list-item *ngIf="isDropdownOpen" routerLink='/userdashh/madrasareq'>For Madrasa</mat-list-item>
+            <mat-list-item *ngIf="isDropdownOpen" routerLink='/userdashh/orphanreq'>For Orphans</mat-list-item>
+            <mat-list-item *ngIf="isDropdownOpen" routerLink='/userdashh/privatereq'>For Private</mat-list-item>
+        
+        
+            <button mat-list-item class="btn dropdown-toggle" (click)="listDropdown()" *ngIf="match.roleMatch(['Admin','Staff'])"><mat-icon mat-list-icon>stars</mat-icon>Sent Application</button>
+            
+            <mat-list-item *ngIf="isDropdownOpenList" routerLink='/userdashh/masjid'>For Masjid</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenList" routerLink='/userdashh/madrasa'>For Madrasa</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenList" routerLink='/userdashh/orphan'>For Orphans</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenList" routerLink='/userdashh/private'>For Private</mat-list-item>
+            
+             <button mat-list-item class="btn dropdown-toggle" (click)="availDropdown()" ><mat-icon mat-list-icon>stars</mat-icon>Available Application</button>
+            
+            <mat-list-item *ngIf="isDropdownOpenAvail" routerLink='/userdashh/acceptmasjid'>For Masjid</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenAvail" routerLink='/userdashh/acceptmadrasa'>For Madrasa</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenAvail" routerLink='/userdashh/acceptedorphan'>For Orphans</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenAvail" routerLink='/userdashh/acceptedprivate'>For Private</mat-list-item>
+
+             <button mat-list-item class="btn dropdown-toggle" (click)="staffDropdown()" *ngIf="match.roleMatch(['Admin'])" ><mat-icon mat-list-icon>stars</mat-icon>Staffs</button>
+            
+            <mat-list-item *ngIf="isDropdownOpenStaff" routerLink='/userdashh/staffreg'>Register Staffs</mat-list-item>
+             <mat-list-item *ngIf="isDropdownOpenStaff" routerLink='/userdashh/stafflist'>Staff Lists</mat-list-item>
+             <button mat-list-item routerLink='/userdashh/userhom' ><mat-icon mat-list-icon>restore</mat-icon>History</button>
+        <button mat-list-item><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+        </mat-nav-list>
+        </div>
+        </mat-sidenav>
+            
+            
+        <mat-sidenav-content style="width: 85%;">
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <div class="col-md-6" style="width: 100%;">
+            <router-outlet></router-outlet>
+          </div>
+        </mat-sidenav-content>
+        
+      </mat-sidenav-container>
+    </div>
 </mat-card>

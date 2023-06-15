@@ -1,8 +1,11 @@
 button{
-    padding: 30px;
-    background-color: aliceblue;
+    
+    text-align: start;
+    border: none;
+    align-items: center;
 }
 mat-card{
-margin-top: 8%;
-
+margin-top: 2%;
+width: 100%;
 }
+

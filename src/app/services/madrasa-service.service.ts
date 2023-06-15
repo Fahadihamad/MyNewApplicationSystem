@@ -50,6 +50,10 @@ rejectApplication(id: number) {
 }
 getAcceptedList():Observable<Madrasa[]>{
      
-  return this.http.get<Madrasa[]>(`${this.apiUrlAcc}`)
+  return this.http.get<Madrasa[]>(`${this.apiUrlAcc}`);
+}
+getRejectedList():Observable<Madrasa[]>{
+     
+  return this.http.get<Madrasa[]>(`${this.apiUrlRej}`)
 }
 }

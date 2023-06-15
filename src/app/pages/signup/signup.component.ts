@@ -49,14 +49,14 @@ export class SignupComponent implements OnInit {
     (data)=>{
 
       console.log(data);
-
+      this.router.navigate(['/login']);
       // alert("succesfull")
       this.snack.open("success !!",'',{
         duration:300
         
       });
 
-      this.router.navigate(['/login']);
+      
 
     },
     (error)=>{

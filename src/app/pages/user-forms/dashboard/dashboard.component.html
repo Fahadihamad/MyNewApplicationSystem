@@ -1,0 +1,140 @@
+<body>
+    <mat-card>
+        <b><span>Dashboard</span></b>
+    </mat-card>
+    <br>
+    <mat-card> 
+    <b style="text-align: center;" *ngIf="match.roleMatch(['Staff','Admin'])"><span style="text-align: center;color:purple;" >Sent Applications</span></b>
+</mat-card>
+    <div class="row" *ngIf="match.roleMatch(['Staff','Admin'])">
+         
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card>
+            <div class="container">
+                <h2 class="title">For Masjid</h2>
+                <h1 class="title">{{totalMasjid}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/masjid']">View</button></p>
+            </div>
+        </mat-card>
+        </div>
+    
+
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Madrasa</h2>
+                <h1 class="title">{{totalMadrasa}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/madrasa']">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+    
+
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card>  
+            <div class="container">
+                <h2 class="title">For Orphans</h2>
+                <h1 class="title">{{totalOrphans}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/orphan']">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+    
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card>  
+            <div class="container">
+                <h2 class="title">For Private</h2>
+                <h1 class="title">{{totalPrivate}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/private']">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+    </div>
+<mat-card style="margin-top: 4%;">
+       <b style="text-align: center;" *ngIf="match.roleMatch(['Staff','Admin'])">  <span style="text-align: center;color:green;">Accepted Applications</span></b>
+       <b style="text-align: center;" *ngIf="match.roleMatch(['Sponsors','Applicant'])">  <span style="text-align: center;color:green;">Available Applications</span></b>
+    </mat-card>
+    <div class="row" *ngIf="match.roleMatch(['Staff','Sponsors','Applicant','Admin'])">
+        
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card>
+            <div class="container">
+                <h2 class="title">For Masjid</h2>
+                <h1 class="title">{{totalAcceptedMasjid}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/acceptmasjid']" style="background-color: green;">View</button></p>
+            </div>
+        </mat-card>
+        </div>
+    
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Madrasa</h2>
+                <h1 class="title">{{totalAcceptedMadrasa}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/acceptmadrasa']" style="background-color:green;">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Orphans</h2>
+                <h1 class="title">{{totalAcceptedOrphan}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/acceptedorphan']" style="background-color: green;">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Private</h2>
+                <h1 class="title">{{totalAcceptedPrivate}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/acceptedprivate']" style="background-color: green;">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+    </div>
+    <mat-card style="margin-top: 4%;"> 
+     <b style=" text-align: center;" *ngIf="match.roleMatch(['Staff','Admin'])">   <span style="text-align: center;color:red;" >Rejected Applications</span></b>
+    </mat-card>
+    <div class="row" *ngIf="match.roleMatch(['Staff','Admin'])">
+        
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card>
+            <div class="container">
+                <h2 class="title">For Masjid</h2>
+                <h1 class="title">{{totalRejecttedMasjid}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/rejectedMasjid']" style="background-color: red;">View</button></p>
+            </div>
+        </mat-card>
+        </div>
+    
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Madrasa</h2>
+                <h1 class="title">{{totalRejecttedMadrasa}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/rejectedMadrasa']" style="background-color: red;">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Orphans</h2>
+                <h1 class="title">{{totalRejecttedOrphan}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/rejectedOrphan']" style="background-color: red;">View</button></p>
+            </div>
+             </mat-card>
+        </div>
+        <div class="col-md-3" style="margin-top: 2%;">
+            <mat-card> 
+            <div class="container">
+                <h2 class="title">For Private</h2>
+                <h1 class="title">{{totalRejecttedPrivate}}</h1>
+                <p><button class="button" [routerLink]="['/userdashh/rejectedPrivate']" style="background-color: red;">View</button></p>
+            </div>
+        </mat-card> 
+        </div>
+    </div>
+</body>

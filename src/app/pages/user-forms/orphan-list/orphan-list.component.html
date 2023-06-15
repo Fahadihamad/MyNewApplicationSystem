@@ -1,0 +1,42 @@
+<app-card Title="" Subtitles="">
+    <div>
+        <h1 *ngIf="match.roleMatch(['Applicant'])">view your Application here</h1>
+        <h1 *ngIf="match.roleMatch(['Staff','Sponsors','Admin'])">List Of Orphans Applications</h1>
+        
+    </div>
+    <div class="container"> 
+    <table class="table table-striped">
+        
+        <thead>
+            <tr style="align-items: start;">
+                <!-- <th>User name</th> -->
+                <th>Date</th>
+                <th>Time</th>
+                
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let orphans of orphan">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{orphans.date}}</td>
+                <td>{{orphans.time}}</td>
+                
+                <td>{{orphans.status}}</td>
+                <td data-label="Actions">
+                    <button  (click)="updateOrphans(orphans.id)" class="btn btn-primary" style="margin-left: 10px;">update</button>
+                    <button  (click)="deleteOrphans(orphans.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>
+                    <button  (click)="OrphansDetails(orphans.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
+                    <button (click)="acceptApplication(orphans.id)" class="btn btn-success" style="margin-left: 10px;" *ngIf="match.roleMatch(['Staff','Admin'])">Accept</button>
+                    <button (click)="rejectApplication(orphans.id)" class="btn btn-danger" style="margin-left: 10px;" *ngIf="match.roleMatch(['Staff','Admin'])">Reject</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</app-card>
+
+
