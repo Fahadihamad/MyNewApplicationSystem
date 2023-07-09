@@ -16,13 +16,14 @@ export class MasjidServiceService {
   delete="http://localhost:8898/api/masjid/delete"
   apiUrlAcc="http://localhost:8898/api/masjid/accept"
   apiUrlRej="http://localhost:8898/api/masjid/reject"
-
+  private baseUrl = 'http://localhost:8898/api/masjid'
   constructor(private http:HttpClient) { }
 
-  addMasjidReq(masjid:Masjid):Observable<Object>{
+  // addMasjidReq(massjidBuild:any):Observable<any>{
 
-    return this.http.post(`${this.addmasjid}`, masjid);
-  }
+  //   return this.http.post(`${this.addmasjid}`, massjidBuild);
+  // }
+  
   getMasjidList():Observable<Masjid[]>{
      
     return this.http.get<Masjid[]>(`${this.listMasjid}`)
@@ -36,7 +37,13 @@ export class MasjidServiceService {
 
    return this.http.put(`${this.update}/${id}`,masjid);
  }
+ getImage(id: number): Observable<any> {
+  return this.http.get(`${this.baseUrl}/image/${id}`, { responseType: 'blob' });
+}
 
+getFile(id: number): Observable<any> {
+  return this.http.get(`${this.baseUrl}/file/${id}`, { responseType: 'blob' });
+}
  deleteMasjid(id:number):Observable<Object>{
 
    return this.http.delete(`${this.delete}/${id}`);

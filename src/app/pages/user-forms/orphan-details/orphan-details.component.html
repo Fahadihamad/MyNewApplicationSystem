@@ -1,1 +1,44 @@
-<p>orphan-details works!</p>
+
+<app-card>
+    <h1 style="text-align: center;font-style: italic;color: green;" ><b>OMBI LA MSAADA KWA YATIMA</b></h1>
+    <div class="container">
+    <div class="right" >
+       <h1>  Ofisi Ya Mufti Mkuu ZANZIBAR</h1>
+       <h2 >S.L.P: 67676</h2>
+       <h3>ZANZIBAR</h3>
+    </div>
+    <div *ngIf="orphan">
+    <div class="left">
+        <h2>FULL NAME OF ORPHAN:{{orphan.orp_firstName}} {{orphan.orp_sectName}} {{orphan.orp_lasttName}}</h2>
+        <h2>PHONE NUMBER:{{orphan.orp_phone}}</h2>
+        <h3>HOUSE NUMBER:{{orphan.houseNo}}</h3>
+        <h4>REGION:{{orphan.region}}</h4>
+        <h4>DISTRICT:{{orphan.district}}</h4>
+        <h4>SHEHIA:{{orphan.shehia}}</h4>
+        <h4>STREET:{{orphan.street}}</h4>
+    
+    </div>
+</div>
+<div class="row" style="margin-top: 600px;margin-bottom: 20px;">
+    <div class="col">
+<div *ngIf="imageUrl">
+    <h3>PASSPORT SIZE IMAGE:</h3>
+    <img [src]="imageUrl" alt="Masjid Image" />
+  </div>
+    </div>
+    <div class="col">
+  <div *ngIf="fileUrl">
+    <h3>DOWNLOAD SHEHIA LETTER:</h3>
+    <a [href]="fileUrl" download>Click To Download Letter</a>
+  </div>
+    </div>
+</div>
+    
+    <div class="centerss" style="margin-top: 20px;" >
+        <h1  style="text-align: center;"><b>KUH:OMBI LA MSAADA KWA YATIMA</b></h1>
+        <p style="text-align: center;">{{orphan.discription}}</p>
+        <h1 style="text-align: center;"><b>SAIDIA CHOCHOTE ULICHO RUZUKIWA</b></h1>
+    </div>
+    </div>
+    
+    </app-card>

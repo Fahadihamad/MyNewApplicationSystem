@@ -1,59 +1,114 @@
-<app-card>
+<!-- <app-card>
     <h1>View Application Details</h1>
     <div class="">
+        <div *ngIf="massjidBuild">
         <div class="">
-            <label for=""><b>Time:</b></label>{{masjid.time}}
+            <label for=""><b>Date:</b></label>{{massjidBuild.date}}
+        
+       
+        <div class="">
+            <label for=""><b>Full discription:</b></label>{{massjidBuild.discription}}
         </div>
         <div class="">
-            <label for=""><b>Date:</b></label>{{masjid.date}}
-        <div class="">
-            <label for=""><b>Masjid Image:</b></label>{{masjid.image}}
+            <label for=""><b>Region:</b></label>{{massjidBuild.region}}
         </div>
         <div class="">
-            <label for=""><b>Shehia letter:</b></label>{{masjid.letter}}
+            <label for=""><b>District:</b></label>{{massjidBuild.district}}
         </div>
         <div class="">
-            <label for=""><b>Full discription:</b></label>{{masjid.discription}}
+            <label for=""><b>Shehia:</b></label>{{massjidBuild.shehia}}
         </div>
         <div class="">
-            <label for=""><b>Region:</b></label>{{masjid.region}}
+            <label for=""><b>Street:</b></label>{{massjidBuild.street}}
         </div>
         <div class="">
-            <label for=""><b>District:</b></label>{{masjid.district}}
+            <label for=""><b>Imam first name:</b></label>{{massjidBuild.imam_firstName}}
         </div>
         <div class="">
-            <label for=""><b>Shehia:</b></label>{{masjid.shehia}}
+            <label for=""><b>Imam second name:</b></label>{{massjidBuild.imam_sectName}}
         </div>
         <div class="">
-            <label for=""><b>Street:</b></label>{{masjid.street}}
+            <label for=""><b>Imam last name:</b></label>{{massjidBuild.imam_lasttName}}
         </div>
         <div class="">
-            <label for=""><b>Imam first name:</b></label>{{masjid.imam_firstName}}
+            <label for=""><b>Imam phone number:</b></label>{{massjidBuild.imam_phone}}
         </div>
         <div class="">
-            <label for=""><b>Imam second name:</b></label>{{masjid.imam_sectName}}
+            <label for=""><b>Assistant first name:</b></label>{{massjidBuild.assist_firstName}}
         </div>
         <div class="">
-            <label for=""><b>Imam last name:</b></label>{{masjid.imam_lasttName}}
+            <label for=""><b>Assistant second name:</b></label>{{massjidBuild.assist_secName}}
         </div>
         <div class="">
-            <label for=""><b>Imam phone number:</b></label>{{masjid.imam_phone}}
+            <label for=""><b>Assistant last name:</b></label>{{massjidBuild.assist_lastName}}
         </div>
         <div class="">
-            <label for=""><b>Assistant first name:</b></label>{{masjid.assist_firstName}}
+            <label for=""><b>Assistant phone number:</b></label>{{massjidBuild.assisst_phone}}
         </div>
         <div class="">
-            <label for=""><b>Assistant second name:</b></label>{{masjid.assist_secName}}
+            <label for=""><b>Status:</b></label>{{massjidBuild.status}}
         </div>
-        <div class="">
-            <label for=""><b>Assistant last name:</b></label>{{masjid.assist_lastName}}
-        </div>
-        <div class="">
-            <label for=""><b>Assistant phone number:</b></label>{{masjid.assisst_phone}}
-        </div>
-        <div class="">
-            <label for=""><b>Status:</b></label>{{masjid.status}}
-        </div>
+       
+       
     </div>
+    </div>
+    
+        <div *ngIf="imageUrl">
+            <h3>Image:</h3>
+            <img [src]="imageUrl" alt="Masjid Image" />
+          </div>
+        
+          <div *ngIf="fileUrl">
+            <h3>File:</h3>
+            <a [href]="fileUrl" download>Download File</a>
+          </div>
     </div>
     </app-card>
+   
+    -->
+    <app-card>
+        <h1 style="text-align: center;font-style: italic;color: green;" ><b>OMBI LA MSAADA WA MSKITI</b></h1>
+        
+        <div class="container">
+        <div class="right" >
+           <h1>  Ofisi Ya Mufti Mkuu ZANZIBAR</h1>
+           <h2 >S.L.P: 67676</h2>
+           <h3>ZANZIBAR</h3>
+        </div>
+        <div *ngIf="massjidBuild">
+        <div class="left">
+            <h3>FULL NAME OF IMAM:{{massjidBuild.imam_firstName}} {{massjidBuild.imam_sectName}} {{massjidBuild.imam_lasttName}} </h3>
+            <h3>FULL NAME OF IMAM ASSISTANT:{{massjidBuild.assist_firstName}} {{massjidBuild.assist_secName}} {{massjidBuild.assist_lastName}}</h3>
+            <h3>IMAM PHONE NUMBER:{{massjidBuild.imam_phone}}</h3>
+            <h3>ASSISTANT PHONE NUMBER:{{massjidBuild.assisst_phone}}</h3>
+            <h4>REGION:{{massjidBuild.region}}</h4>
+            <h4>DISTRICT:{{massjidBuild.district}}</h4>
+            <h4>SHEHIA:{{massjidBuild.shehia}}</h4>
+            <h4>STREET:{{massjidBuild.street}}</h4>
+            <h4>DATE:{{massjidBuild.date}}</h4>
+        
+        </div>
+        </div>
+        <div class="row" style="margin-top: 700px;margin-bottom: 20px;">
+            <div class="col">
+        <div *ngIf="imageUrl">
+            <h3>MASJID IMAGE:</h3>
+            <img [src]="imageUrl" alt="Masjid Image" />
+          </div>
+            </div>
+            <div class="col">
+          <div *ngIf="fileUrl">
+            <h3>DOWNLOAD SHEHIA LETTER:</h3>
+            <a [href]="fileUrl" download>Click To Download Letter</a>
+          </div>
+            </div>
+        </div>
+        <div class="centerss " style="margin-top: 20px;">
+            <h1  style="text-align: center;"><b>KUH:OMBI LA MSAADA MSIKITI</b></h1>
+            <p style="text-align: center;">{{massjidBuild.discription}}</p>
+            <h1 style="text-align: center;"><b>SAIDIA CHOCHOTE ULICHO RUZUKIWA</b></h1>
+        </div>
+    </div>
+        
+    
+        </app-card>

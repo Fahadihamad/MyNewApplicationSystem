@@ -12,14 +12,16 @@ import { MadrasaServiceService } from 'src/app/services/madrasa-service.service'
 })
 export class MadrasareqListComponent implements OnInit {
 
-  madrast:Madrasa[]=[];
+  madrast:Madrasa[];
+
+  // madrasa:Madrasa = new Madrasa();
 
 constructor(private madrasaSrve:MadrasaServiceService,private router:Router,public match:LoginServiceService, private snack:MatSnackBar){}
 
   ngOnInit(): void {
     this.getAllMadrasa();
     // this.getAccepted();
-
+    
     
   }
   MadrasaDetails(id:number){
@@ -48,6 +50,7 @@ constructor(private madrasaSrve:MadrasaServiceService,private router:Router,publ
         this.snack.open('Application accepted','',{
           duration:3000,
         });
+        this.getAllMadrasa();
       },
       (error) => {
         // Error handling (e.g., display error message)
@@ -58,6 +61,10 @@ constructor(private madrasaSrve:MadrasaServiceService,private router:Router,publ
   rejectApplication(id: number) {
     this.madrasaSrve.rejectApplication(id).subscribe(
       () => {
+        this.snack.open('Application rejected','',{
+          duration:3000,
+        });
+        this.getAllMadrasa();
         // Success handling (e.g., display success message, update UI)
       },
       (error) => {

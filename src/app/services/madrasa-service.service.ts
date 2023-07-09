@@ -15,6 +15,7 @@ export class MadrasaServiceService {
   apiUrlAcc="http://localhost:8898/api/madrasa/accept"
   apiUrlRej="http://localhost:8898/api/madrasa/reject"
   // accepted="http://localhost:8898/api/madrasa/accepted"
+  private baseUrl = 'http://localhost:8898/api/madrasa'
 
   constructor(private http:HttpClient) { }
 
@@ -39,8 +40,16 @@ export class MadrasaServiceService {
  deleteMadrasa(id:number):Observable<Object>{
 
    return this.http.delete(`${this.delete}/${id}`);
-
  }
+   getImage(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/image/${id}`, { responseType: 'blob' });
+  }
+  
+  getFile(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/file/${id}`, { responseType: 'blob' });
+  }
+
+ 
  acceptApplication(id: number) {
   return this.http.put(`${this.apiUrlAcc}/${id}`, null);
 }

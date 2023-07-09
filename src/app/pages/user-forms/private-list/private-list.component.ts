@@ -13,7 +13,9 @@ import { PrivateServiceService } from 'src/app/services/private-service.service'
 export class PrivateListComponent implements OnInit {
 
 
-  privates:Private[]=[];
+  privates:Private[]=[
+    
+  ];
 
   constructor(private privateSrve:PrivateServiceService,private router:Router,public match:LoginServiceService, private snack:MatSnackBar){
 
@@ -47,6 +49,7 @@ export class PrivateListComponent implements OnInit {
         this.snack.open('Application accepted','',{
           duration:3000,
         });
+        this.getAllPrivate();
       },
       (error) => {
         // Error handling (e.g., display error message)
@@ -57,6 +60,9 @@ export class PrivateListComponent implements OnInit {
   rejectApplication(id: number) {
     this.privateSrve.rejectApplication(id).subscribe(
       () => {
+        this.snack.open('Application rejected','',{
+          duration:3000,
+        });
         // Success handling (e.g., display success message, update UI)
       },
       (error) => {

@@ -45,6 +45,7 @@ orphan:Orphans[]=[];
         this.snack.open('Application accepted','',{
           duration:3000,
         });
+        this.getAllOrphans();
       },
       (error) => {
         // Error handling (e.g., display error message)
@@ -55,6 +56,10 @@ orphan:Orphans[]=[];
   rejectApplication(id: number) {
     this.orphanSrve.rejectApplication(id).subscribe(
       () => {
+        this.snack.open('Application rejected','',{
+          duration:3000,
+        });
+        this.getAllOrphans();
         // Success handling (e.g., display success message, update UI)
       },
       (error) => {

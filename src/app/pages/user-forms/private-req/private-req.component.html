@@ -1,7 +1,9 @@
 <app-card title="" Subtitles="">
     <div class="row" >
       <div class="col-md-12">
-      <h1 style="text-align: center;">Please fill the form below to send your Personal Appplication</h1>
+        <h1>
+          إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ وَفِي سَبِيلِ اللَّهِ وَابْنِ السَّبِيلِ ۖ فَرِيضَةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَكِيمٌ</h1>
+          <h1 style="text-align: center;color: green; font-style: italic;" >Please Fill The Form Below To Send Your Appplication For Private</h1>
     </div>
     </div>
     <div class="container">
@@ -127,16 +129,7 @@
           >
         </mat-form-field>
         </div>
-            <div class="col-md-3">  
-          <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>TIME</mat-label>
-          <input matInput
-          [(ngModel)]="private.time" name="time" 
-          type="datetime"
-          >
-          
-        </mat-form-field>
-            </div>
+           
       <!-- </td>
     </tr> -->
     <!-- <tr class="">
@@ -144,7 +137,7 @@
         <div class="col-md-3"> 
           <p>SHEHA LETTER</p>
           <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-          [(ngModel)]="private.letter"   accept=".jpg,.png"
+          (change)="onFilesChange($event)" multiple required
           >
         </div>
       <!-- </td>
@@ -153,7 +146,7 @@
         <div class="col-md-3"> 
           <p>PASSPORT SIZE</p>
           <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-           accept=".jpg,.png"
+          (change)="onImagesChange($event)" multiple accept="image/*" id="file" required
           >
         </div>
       </div>

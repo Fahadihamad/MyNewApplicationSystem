@@ -8,9 +8,10 @@
     <table class="table table-striped">
         <thead>
             <tr style="align-items: start;">
+                
                 <!-- <th>User name</th> -->
                 <th>Date</th>
-                <th>Time</th>
+                
                 <th>Status</th>
     
                 <th>Actions</th>
@@ -19,8 +20,9 @@
         <tbody>
             <tr *ngFor="let masjid of masjids">
                 <!-- <td>{{staffs.userName}}</td> -->
+                
                 <td>{{masjid.date}}</td>
-                <td>{{masjid.time}}</td>
+                
                 <td>{{masjid.status}}</td>
                 <td>
                     <button  (click)="updateMasjid(masjid.id)" class="btn btn-primary">update</button>

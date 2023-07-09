@@ -1,4 +1,4 @@
-<app-card>
+<!-- <app-card>
     <h1>View Application Details</h1>
     <div class="">
         <div class="">
@@ -57,4 +57,50 @@
     </div>
     </div>
     </app-card>
+ -->
+ <app-card>
+    <h1 style="text-align: center;font-style: italic;color: green;" ><b>OMBI LA MSAADA WA MADRASA</b></h1>
+    
+    <div class="container">
+    <div class="right" >
+       <h1>  Ofisi Ya Mufti Mkuu ZANZIBAR</h1>
+       <h2 >S.L.P: 67676</h2>
+       <h3>ZANZIBAR</h3>
+    </div>
+    <div *ngIf="madrasa">
+    <div class="left">
+        <h3>FULL NAME OF HEAD:{{madrasa.head_firstName}} {{madrasa.head_sectName}} {{madrasa.head_lasttName}} </h3>
+        <h3>FULL NAME OF HEAD ASSISTANT:{{madrasa.assisthead_firstName}} {{madrasa.assisthead_secName}} {{madrasa.assisthead_lastName}}</h3>
+        <h3>HEAD PHONE NUMBER:{{madrasa.head_phone}}</h3>
+        <h3>ASSISTANT PHONE NUMBER:{{madrasa.assissthead_phone}}</h3>
+        <h4>REGION:{{madrasa.region}}</h4>
+        <h4>DISTRICT:{{madrasa.district}}</h4>
+        <h4>SHEHIA:{{madrasa.shehia}}</h4>
+        <h4>STREET:{{madrasa.street}}</h4>
+        <h4>DATE:{{madrasa.date}}</h4>
+    
+    </div>
+    </div>
+    <div class="row" style="margin-top: 700px;margin-bottom: 20px;">
+        <div class="col">
+    <div *ngIf="imageUrl">
+        <h3>MADRASA IMAGE:</h3>
+        <img [src]="imageUrl" alt="Masjid Image" />
+        </div>
+        </div>
+        <div class="col">
+      <div *ngIf="fileUrl">
+        <h3>DOWNLOAD SHEHIA LETTER:</h3>
+        <a [href]="fileUrl" download>Click To Download Letter</a>
+      </div>
+        </div>
+    </div>
+    <div class="centerss " style="margin-top: 20px;">
+        <h1  style="text-align: center;"><b>KUH:OMBI LA MSAADA MADRASA</b></h1>
+        <p style="text-align: center;">{{madrasa.discription}}</p>
+        <h1 style="text-align: center;"><b>SAIDIA CHOCHOTE ULICHO RUZUKIWA</b></h1>
+    </div>
+</div>
+    
 
+    </app-card>

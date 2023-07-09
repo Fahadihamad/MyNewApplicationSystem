@@ -1,119 +1,16 @@
-<!-- <app-card title="" Subtitles="">
-    <h1 style="text-align: center;">Please fill the form below to send your help Appplication for Madrasa</h1>
-    <form>
-<table class="example-full-width" cellspacing="0"><tr>
-    <td>
-        
-        <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Head First name</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-    <td>
-        
-        <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Head Second name</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-    <td>
-        
-        <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Head Last name</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-  </tr>
-  <tr>
-    <td>
-        <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Assistant First name</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td>
-        <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Assistant Second name</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td>
-    
-        <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Assistant Last name</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-  </tr>
-  <tr>
-    <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Head phone number</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Assistant phone number</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Shehia</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-  </tr>
-  <tr>
-    <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>District</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Region</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Street</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-  </tr>
-  <tr>
-    <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Date</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Time</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-  </tr>
-  <tr class="">
-    <td style="margin-left: 2px;">
-        <p>Sheha letter</p>
-        <input type="file" class="form-control-file border" name="file" style="width: 250px;">
-    </td>
-    
-    <td style="margin-left: 2px;">
-        <p>Madrasa image</p>
-        <input type="file" class="form-control-file border" name="file" style="width: 250px;">
-    </td>
 
-  </tr>
-</table>
-
-    
-  
-  <div class="containers">
-    <h2 style="text-align: center;">Write your description about your Application</h2>
-    <mat-form-field class="example-full-width" appearance="outline">Description
-        <textarea matInput></textarea>
-      </mat-form-field>
-    <div>
-        <button mat-raised-button color="primary">SUBMIT</button></div>
-</div>
-</form>
-</app-card>
- -->
 
  
 <app-card title="" Subtitles="">
   <div class="row" >
     <div class="col-md-12">
-    <h1 style="text-align: center;">Please fill the form below to send your help Appplication for Madrasa building</h1>
+      <h1>
+        إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ وَفِي سَبِيلِ اللَّهِ وَابْنِ السَّبِيلِ ۖ فَرِيضَةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَكِيمٌ</h1>
+        <h1 style="text-align: center;color: green; font-style: italic;" >Please Fill The Form Below To Send Your Appplication For Madrasa</h1>
   </div>
   </div>
   <div class="container">
-    <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+    <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data" method="post">
 <!-- <table class="example-full-width" cellspacing="0"><tr> -->
   <div class="row" style="padding: 7px;">
     <div class="col-md-4"> 
@@ -272,16 +169,7 @@
     </td>
       <td> -->
         <div class="row">
-          <div class="col-md-4">  
-        <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Time</mat-label>
-        <input matInput
-        [(ngModel)]="madrasa.time" name="time" 
-        type="datetime"
-        >
-        
-      </mat-form-field>
-          </div>
+          
     <!-- </td>
   </tr> -->
   <!-- <tr class="">
@@ -289,7 +177,7 @@
       <div class="col-md-4"> 
         <p>Sheha letter</p>
         <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-          (change)="onFileSelected($event)" accept=".jpg,.png"
+        (change)="onFilesChange($event)" multiple required
         >
         <!-- <button (click)="onUpload()">Upload</button>  -->
         <!-- <input type="text" [(ngModel)]="madrasa.name" placeholder="Enter Name" /> -->
@@ -302,7 +190,7 @@
       <div class="col-md-4"> 
         <p>Madrasa image</p>
         <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-        (change)="onFileSelected($event)" accept=".jpg,.png"
+        (change)="onImagesChange($event)" multiple accept="image/*" id="file" required
         >
       </div>
     </div>

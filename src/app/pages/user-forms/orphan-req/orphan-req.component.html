@@ -1,11 +1,13 @@
 <app-card title="" Subtitles="">
     <div class="row" >
       <div class="col-md-12">
-      <h1 style="text-align: center;">Please fill the form below to send your Orphan Appplication</h1>
+        <h1>
+          إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ وَفِي سَبِيلِ اللَّهِ وَابْنِ السَّبِيلِ ۖ فَرِيضَةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَكِيمٌ</h1>
+          <h1 style="text-align: center;color: green; font-style: italic;" >Please Fill The Form Below To Send Your Appplication For Orphans</h1>
     </div>
     </div>
     <div class="container">
-      <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+      <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data" method="post">
   <!-- <table class="example-full-width" cellspacing="0"><tr> -->
     <div class="row" style="padding: 7px;">
       <div class="col-md-4"> 
@@ -123,11 +125,11 @@
           <mat-label>DATE</mat-label>
           <input matInput
           [(ngModel)]="orphan.date" name="date"
-        type="date"
+        type="date" class="form-control"
           >
         </mat-form-field>
         </div>
-            <div class="col-md-3">  
+            <!-- <div class="col-md-3">  
           <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>TIME</mat-label>
           <input matInput
@@ -136,7 +138,7 @@
           >
           
         </mat-form-field>
-            </div>
+            </div> -->
       <!-- </td>
     </tr> -->
     <!-- <tr class="">
@@ -144,7 +146,7 @@
         <div class="col-md-3"> 
           <p>SHEHA LETTER</p>
           <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-          [(ngModel)]="orphan.letter"   accept=".jpg,.png"
+          (change)="onFilesChange($event)" multiple required
           >
         </div>
       <!-- </td>
@@ -153,7 +155,7 @@
         <div class="col-md-3"> 
           <p>PASSPORT SIZE</p>
           <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-           accept=".jpg,.png"
+          (change)="onImagesChange($event)" multiple accept="image/*" id="file" required
           >
         </div>
       </div>
@@ -166,7 +168,7 @@
       <!-- <input type="file" class="form-control-file border" name="file" style="width: 250px;"> -->
     
     <div class="containers">
-      <h2 style="text-align: center;">Write your description about your Application</h2>
+      <h2 style="text-align: center;color: green; font-style: italic;" >Write your description about your Application</h2>
       <mat-form-field class="example-full-width" appearance="outline">Description
           <textarea matInput [(ngModel)]="orphan.discription" name="discr"></textarea>
         </mat-form-field>

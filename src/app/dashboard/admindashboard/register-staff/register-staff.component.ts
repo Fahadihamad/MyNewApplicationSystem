@@ -37,7 +37,7 @@ export class RegisterStaffComponent implements OnInit{
     
   }
   goToStaffList(){
-    return this.router.navigate(['/stafflist'])
+    return this.router.navigate(['/userdashh/stafflist'])
   }
   formSubmit(){
     console.log(this.staffs);

@@ -2,11 +2,14 @@
 <app-card title="" Subtitles="">
   <div class="row" >
     <div class="col-md-12">
-    <h1 style="text-align: center;">Please fill the form below to send your help Appplication for Masjid</h1>
+    
+    <h1>
+      إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ وَفِي سَبِيلِ اللَّهِ وَابْنِ السَّبِيلِ ۖ فَرِيضَةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَكِيمٌ</h1>
+      <h1 style="text-align: center;color: green; font-style: italic;" >Please Fill The Form Below To Send Your Appplication For Masjid</h1>
   </div>
   </div>
   <div class="container">
-    <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data">
+    <form (ngSubmit)="onSubmitForm()" enctype="multipart/form-data" method="post">
 <!-- <table class="example-full-width" cellspacing="0"><tr> -->
   <div class="row" style="padding: 7px;">
     <div class="col-md-4"> 
@@ -15,7 +18,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Imam First name</mat-label>
       <input matInput
-      [(ngModel)]="masjid.imam_firstName" name="first"
+      [(ngModel)]="massjidBuild.imam_firstName" name="first"
       >
     </mat-form-field>
   <!-- </td> -->
@@ -28,7 +31,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Imam Second name</mat-label>
       <input matInput
-      [(ngModel)]="masjid.imam_sectName" name="second"
+      [(ngModel)]="massjidBuild.imam_sectName" name="second"
       >
     </mat-form-field>
   <!-- </td> -->
@@ -39,7 +42,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Imam Last name</mat-label>
         <input matInput
-        [(ngModel)]="masjid.imam_lasttName" name="last" 
+        [(ngModel)]="massjidBuild.imam_lasttName" name="last" 
         >
       </mat-form-field>
     <!-- </td> -->
@@ -53,7 +56,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Assistant First name</mat-label>
         <input matInput
-        [(ngModel)]="masjid.assist_firstName" name="firsts"
+        [(ngModel)]="massjidBuild.assist_firstName" name="firsts"
         >
       </mat-form-field>
         </div>
@@ -63,7 +66,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Assistant Second name</mat-label>
         <input matInput
-        [(ngModel)]="masjid.assist_secName" name="seconds"
+        [(ngModel)]="massjidBuild.assist_secName" name="seconds"
         >
       </mat-form-field>
         </div>
@@ -73,7 +76,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Assistant Last name</mat-label>
         <input matInput
-        [(ngModel)]="masjid.assist_lastName" name="lasts"
+        [(ngModel)]="massjidBuild.assist_lastName" name="lasts"
         >
       </mat-form-field>
         </div>
@@ -87,7 +90,7 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Imam phone number</mat-label>
         <input matInput
-        [(ngModel)]="masjid.imam_phone" name="iphone"
+        [(ngModel)]="massjidBuild.imam_phone" name="iphone"
         type="number" 
         >
       </mat-form-field>
@@ -98,7 +101,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Assistant phone number</mat-label>
         <input matInput
-        [(ngModel)]="masjid.assisst_phone" name="aphone"
+        [(ngModel)]="massjidBuild.assisst_phone" name="aphone"
         type="number"
         >
       </mat-form-field>
@@ -109,7 +112,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Region</mat-label>
         <input matInput 
-        [(ngModel)]="masjid.region" name="sheha"
+        [(ngModel)]="massjidBuild.region" name="sheha"
         >
       </mat-form-field>
         </div>
@@ -123,7 +126,7 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>District</mat-label>
         <input matInput
-        [(ngModel)]="masjid.district" name="dist"
+        [(ngModel)]="massjidBuild.district" name="dist"
         >
       </mat-form-field>
         </div>
@@ -133,7 +136,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Shehia</mat-label>
         <input matInput
-        [(ngModel)]="masjid.shehia" name="reg"
+        [(ngModel)]="massjidBuild.shehia" name="reg"
         >
       </mat-form-field>
         </div>
@@ -143,7 +146,7 @@
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Street</mat-label>
         <input matInput
-        [(ngModel)]="masjid.street" name="stre"
+        [(ngModel)]="massjidBuild.street" name="stre"
         >
       </mat-form-field>
       </div>
@@ -155,7 +158,7 @@
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Date</mat-label>
         <input matInput
-        [(ngModel)]="masjid.date" name="date"
+        [(ngModel)]="massjidBuild.date" name="date"
       type="date"
         >
       </mat-form-field>
@@ -165,24 +168,24 @@
     </td>
       <td> -->
         <div class="row">
-          <div class="col-md-4">  
+          <!-- <div class="col-md-4">  
         <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Time</mat-label>
         <input matInput
-        [(ngModel)]="masjid.time" name="time" 
+        [ name="time" 
         type="datetime"
         >
         
       </mat-form-field>
-          </div>
+          </div> -->
     <!-- </td>
   </tr> -->
   <!-- <tr class="">
     <td style="margin-left: 2px;"> -->
       <div class="col-md-4"> 
         <p>Sheha letter</p>
-        <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-        [(ngModel)]="masjid.letter"  (onchange)="onFileSelected($event)" accept=".jpg,.png"
+        <input type="file" class="form-control-file border" name="files" style="width: 250px;"
+         (change)="onFilesChange($event)" multiple required
         >
       </div>
     <!-- </td>
@@ -190,8 +193,8 @@
     <td style="margin-left: 2px;"> -->
       <div class="col-md-4"> 
         <p>Masjid image</p>
-        <input type="file" class="form-control-file border" name="file" style="width: 250px;"
-        (change)="onFileSelected($event)" accept=".jpg,.png"
+        <input type="file" class="form-control-file border" name="images" style="width: 250px;"
+        (change)="onImagesChange($event)" multiple accept="image/*" id="file" required
         >
       </div>
     </div>
@@ -204,9 +207,9 @@
     <!-- <input type="file" class="form-control-file border" name="file" style="width: 250px;"> -->
   
   <div class="containers">
-    <h2 style="text-align: center;">Write your description about your Application</h2>
+    <h2 style="text-align: center;color: green; font-style: italic;" >Write your description about your Application</h2>
     <mat-form-field class="example-full-width" appearance="outline">Description
-        <textarea matInput [(ngModel)]="masjid.discription" name="discr"></textarea>
+        <textarea matInput [(ngModel)]="massjidBuild.discription" name="discr"></textarea>
       </mat-form-field>
     <div>
         <button mat-raised-button color="primary">SUBMIT</button></div>
@@ -214,4 +217,19 @@
 </form>
 </div>
 </app-card>
+<!-- <div *ngIf="massjidBuild.images">
+  <h3>Images:</h3>
+  <div *ngFor="let image of massjidBuild.images">
+    <img [src]="image" alt="Image">
+  </div>
+</div>
+
+<div *ngIf="massjidBuild.files">
+  <h3>Files:</h3>
+  <ul>
+    <li *ngFor="let file of massjidBuild.files">
+      <a [href]="file" target="_blank" rel="noopener">{{ getFileNameFromPath(file) }}</a>
+    </li>
+  </ul>
+</div> -->
 <app-masjidreq-list></app-masjidreq-list>

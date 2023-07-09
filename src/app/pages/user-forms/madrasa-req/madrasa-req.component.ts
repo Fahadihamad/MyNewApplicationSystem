@@ -10,55 +10,145 @@ import { MadrasaServiceService } from 'src/app/services/madrasa-service.service'
   styleUrls: ['./madrasa-req.component.css']
 })
 export class MadrasaReqComponent implements OnInit{
-  selectedFile: File | null = null;
-  imageUrl: any = null;
+  
   
 
-  madrasa:Madrasa = new Madrasa();
+  madrasa={
+    id:'',
+    
+    date:'',
+    file:null,
+    image:null,
+    discription:'',
+     region:'',
+     shehia:'',
+     street:'',
+     district:'',
+     head_firstName:'',
+     head_sectName:'',
+     head_lasttName:'',
+     head_phone:'',
+     assisthead_firstName:'',
+     assisthead_secName:'',
+     assisthead_lastName:'',
+     assissthead_phone:'',
+     name:''
+  }
 
   constructor(private madrasaService:MadrasaServiceService, private snack:MatSnackBar, private http:HttpClient){}
   ngOnInit(): void {
     
   }
-  onSubmitForm(){
-    this.madrasaService.addMadrasaReq(this.madrasa).subscribe(data=>{
-      console.log(data);
-      this.snack.open('Your Application sent successfull !! Wait for response','',{
-        duration:3000,
-      });
-    },
-    error=>console.log(error));
-    this.snack.open('Error Occurred','',{
-      duration:3000,
-    })
-  }
+  // onSubmitForm(){
+  //   this.madrasaService.addMadrasaReq(this.madrasa).subscribe(data=>{
+  //     console.log(data);
+  //     this.snack.open('Your Application sent successfull !! Wait for response','',{
+  //       duration:3000,
+  //     });
+  //   },
+  //   error=>console.log(error));
+  //   this.snack.open('Error Occurred','',{
+  //     duration:3000,
+  //   })
+  // }
   
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-    // this.previewImage();
-  }
+  // onFileSelected(event: any) {
+  //   this.selectedFile = event.target.files[0];
+  //   // this.previewImage();
+  // }
 
   
-    onUpload() {
-      if (this.selectedFile) {
-        const formData = new FormData();
-        formData.append('file', this.selectedFile);
-        formData.append('name', this.madrasa.letter);
+  //   onUpload() {
+  //     if (this.selectedFile) {
+  //       const formData = new FormData();
+  //       formData.append('file', this.selectedFile);
+  //       formData.append('name', this.madrasa.letter);
   
-        this.http.post('http://localhost:8898/api/madrasa/upload', formData)
-          .subscribe((response: any) => {
-            console.log('File uploaded successfully');
-            // Handle response if needed
-        });
+  //       this.http.post('http://localhost:8898/api/madrasa/upload', formData)
+  //         .subscribe((response: any) => {
+  //           console.log('File uploaded successfully');
+  //           // Handle response if needed
+  //       });
+  //   }
+  // }
+
+  // previewImage() {
+  //   const reader = new FileReader();
+  //   reader.onload = (event) => {
+  //     this.imageUrl = event.target?.result;
+  //   };
+  //   reader.readAsDataURL(this.selectedFile as Blob);
+  // }
+
+  onSubmitForm(): void {
+    const formData = new FormData();
+    
+    formData.append('date', this.madrasa.date);
+    formData.append('discription', this.madrasa.discription);
+    formData.append('region', this.madrasa.region);
+    formData.append('shehia', this.madrasa.shehia);
+    formData.append('street', this.madrasa.street);
+    formData.append('district', this.madrasa.district);
+    formData.append('head_firstName', this.madrasa.head_firstName);
+    formData.append('head_sectName', this.madrasa.head_sectName);
+    formData.append('head_lasttName', this.madrasa.head_lasttName);
+    formData.append('head_phone', this.madrasa.head_phone);
+    formData.append('assisthead_firstName', this.madrasa.assisthead_firstName);
+    formData.append('assisthead_secName', this.madrasa.assisthead_secName);
+    formData.append('assisthead_lastName', this.madrasa.assisthead_lastName);
+    formData.append('assissthead_phone', this.madrasa.assissthead_phone);
+    
+    if (this.madrasa.file) {
+      formData.append('file', this.madrasa.file);
     }
+    
+    if (this.madrasa.image) {
+      formData.append('image', this.madrasa.image);
+    }
+
+    this.http.post('http://localhost:8898/api/madrasa/add', formData).subscribe(
+      (response: any) => {
+        console.log('Masjid_build created successfully:', response);
+        // Reset the form
+        this.madrasa = {
+          id:'',
+          
+          date:'',
+          discription:'',
+           region:'',
+           shehia:'',
+           street:'',
+           district:'',
+           head_firstName:'',
+           head_sectName:'',
+           head_lasttName:'',
+           head_phone:'',
+           assisthead_firstName:'',
+           assisthead_secName:'',
+           assisthead_lastName:'',
+           assissthead_phone:'',
+           name:'',
+           image:null,
+          file: null
+        };
+        
+      },
+      (error: any) => {
+        console.error('Error creating Masjid_build:', error);
+      }
+    );
   }
 
-  previewImage() {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      this.imageUrl = event.target?.result;
-    };
-    reader.readAsDataURL(this.selectedFile as Blob);
+  onImagesChange(event: any): void {
+    this.madrasa.image = event.target.files[0];
+    console.log(event.target.files); // Check if files are correctly logged
+  
   }
+
+  onFilesChange(event: any): void {
+    this.madrasa.file = event.target.files[0];
+    console.log(event.target.files);
+  }
+
 }
 

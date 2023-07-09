@@ -1,7 +1,8 @@
+<div class="row" > 
+    <div class="col-md-4">   
+<app-card Title="" Subtitles="" style="border-top: 3px solid green;" >
 
-<app-card Title="" Subtitles="">
-
-    <h1>Your Profile details</h1>
+    <h1 style="font-size:x-large; color: purple;font-style: italic;"><b>Your Profile</b></h1>
     <div class="bootstrap-wrapper">
         <div class="container">
             <div class="container text-center" >
@@ -10,15 +11,15 @@
             </div>
             <div class="row">
                 <div class="col-md-10" offset-md-1>
-                    <h1 style="margin-top: 12px;text-align: center;margin-left: 20%;">{{login.getUsers().firstName}} {{login.getUsers().lastName}}</h1>
-                    <table class="table">
+                    <h1 style="margin-top: 12px;text-align: center;margin-left: 20%;color:rebeccapurple;">{{login.getUsers().firstName}} {{login.getUsers().lastName}}</h1>
+                    <table class="table" >
                         <tr >
 
                             <td>Username</td>
 
-                            <td>{{login.getUsers().userName}}</td>
+                            <td style="color:rebeccapurple;">{{login.getUsers().userName}}</td>
                         </tr>
-                        <tr >
+                        <!-- <tr >
 
                             <td>First name</td>
 
@@ -35,18 +36,18 @@
                             <td>Full name</td>
 
                             <td>{{login.getUsers().firstName}} {{login.getUsers().lastName}}</td>
-                        </tr>
+                        </tr> -->
                         <tr >
 
                             <td>Email</td>
 
-                            <td>{{login.getUsers().email}}</td>
+                            <td style="color:rebeccapurple;">{{login.getUsers().email}}</td>
                         </tr>
                         <tr >
 
-                            <td>Phone number</td>
+                            <td>Phone</td>
 
-                            <td>{{login.getUsers().phone}}</td>
+                            <td style="color:rebeccapurple;">{{login.getUsers().phone}}</td>
                         </tr>
                         
 
@@ -59,9 +60,24 @@
         </div>
     </div>
     <mat-card-actions class="text-center">
-        <button mat-raised-button color="primary" style="margin-left: 36%;">Update</button>
-        <button mat-raised-button color="accent" style="margin-left: 4%;">Reset</button>
-
-
+        <button mat-raised-button color="primary" style="width: 100%;">Edit Profile</button>
+        
     </mat-card-actions>
+
+    
 </app-card>
+    </div>
+    <div class="col-md-8">
+<div class="row" >
+    <app-card > 
+    <h1 style="color:purple;font-style: italic;"><b>Welcome To Mufti's Office Applications System</b></h1>
+    <h1 style="padding-top: 30px;"><b>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</b></h1>
+    <h1>
+        إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ وَفِي سَبِيلِ اللَّهِ وَابْنِ السَّبِيلِ ۖ فَرِيضَةً مِنَ اللَّهِ ۗ وَاللَّهُ عَلِيمٌ حَكِيمٌ</h1>
+</app-card>
+
+
+</div>
+
+    </div>
+</div>

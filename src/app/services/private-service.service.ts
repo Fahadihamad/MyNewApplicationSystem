@@ -15,7 +15,7 @@ export class PrivateServiceService {
   delete="http://localhost:8898/api/private/delete"
   apiUrlAcc="http://localhost:8898/api/private/accept"
   apiUrlRej="http://localhost:8898/api/private/reject"
-
+  private baseUrl = 'http://localhost:8898/api/private'
   constructor(private http:HttpClient) { }
 
   addPrivateReq(privates:Private):Observable<Object>{
@@ -30,6 +30,14 @@ export class PrivateServiceService {
 
     return this.http.get<Private>(`${this.getById}/${id}`);
  }
+
+ getImage(id: number): Observable<any> {
+  return this.http.get(`${this.baseUrl}/image/${id}`, { responseType: 'blob' });
+}
+
+getFile(id: number): Observable<any> {
+  return this.http.get(`${this.baseUrl}/file/${id}`, { responseType: 'blob' });
+}
 
  updatePrivate(id:number, privats:Private):Observable<Object>{
 

@@ -1,0 +1,23 @@
+.right{
+    float: right;
+    text-align: end;
+    
+}
+.left{
+    float: left;
+    margin-top: 100px;
+    text-align: start;
+    
+}
+.centerss{
+    
+    margin-top: 450px;
+    
+}
+.container{
+    border: 10px solid purple;
+}
+img{
+    width: 120px;
+    height: 120px;
+}

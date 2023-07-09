@@ -12,10 +12,11 @@ import { MasjidServiceService } from 'src/app/services/masjid-service.service';
 })
 export class MasjidreqListComponent implements OnInit {
 
-  masjids:Masjid[]=[];
-  constructor(private masjid:MasjidServiceService,private router:Router,public match:LoginServiceService,private snack:MatSnackBar){}
+  masjids:Masjid[];
+  constructor(private masjid:MasjidServiceService,private router:Router,public match:LoginServiceService,private snack:MatSnackBar,public login:LoginServiceService){}
   ngOnInit(): void {
     this.getAllMasjid();
+    
     
   }
   MasjidDetails(id:number){
@@ -44,6 +45,7 @@ export class MasjidreqListComponent implements OnInit {
         this.snack.open('Application accepted','',{
           duration:3000,
         });
+        this.getAllMasjid();
       },
       (error) => {
         // Error handling (e.g., display error message)
@@ -61,6 +63,7 @@ export class MasjidreqListComponent implements OnInit {
         this.snack.open('Application rejected','',{
           duration:3000,
         });
+        this.getAllMasjid();
       },
       (error) => {
         // Error handling (e.g., display error message)

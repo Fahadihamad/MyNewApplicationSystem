@@ -2,9 +2,9 @@ import { Time } from "@angular/common";
 
 export class Masjid {
     id:number;
-    time:Time;
-    status:boolean;
-    date:Date;
+    
+    status:string;
+    date:string;
     image:string;
     letter:string;
     discription:string;

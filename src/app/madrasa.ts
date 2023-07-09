@@ -3,7 +3,7 @@ import { Time } from "@angular/common";
 export class Madrasa {
     id:number;
     time:Time;
-    status:boolean;
+    status:any;
     date:Date;
     letter:string;
     image:string;
