@@ -14,6 +14,7 @@ export class MasjidServiceService {
   getById="http://localhost:8898/api/masjid/find"
   update="http://localhost:8898/api/masjid/update"
   delete="http://localhost:8898/api/masjid/delete"
+  pending="http://localhost:8898/api/masjid/pending"
   apiUrlAcc="http://localhost:8898/api/masjid/accept"
   apiUrlRej="http://localhost:8898/api/masjid/reject"
   private baseUrl = 'http://localhost:8898/api/masjid'
@@ -63,5 +64,9 @@ getAcceptedList():Observable<Masjid[]>{
 getRejectedList():Observable<Masjid[]>{
      
   return this.http.get<Masjid[]>(`${this.apiUrlRej}`)
+}
+getPendingList():Observable<Masjid[]>{
+     
+  return this.http.get<Masjid[]>(`${this.pending}`)
 }
 }

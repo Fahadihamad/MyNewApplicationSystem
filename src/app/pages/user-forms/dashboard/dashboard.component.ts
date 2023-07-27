@@ -36,11 +36,11 @@ export class DashboardComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.masjidServ.getMasjidList().subscribe(masjidd => {
+    this.masjidServ.getPendingList().subscribe(masjidd => {
       this.masjid = masjidd;
       this.totalMasjid = masjidd.length;
     });
-    this.madrasaServ.getMadrasaList().subscribe(madrasa => {
+    this.madrasaServ.getPendingList().subscribe(madrasa => {
       this.madrasa = madrasa;
       this.totalMadrasa = madrasa.length;
     });
@@ -52,11 +52,11 @@ export class DashboardComponent implements OnInit {
       this.masjid = masjid;
       this.totalAcceptedMasjid = masjid.length;
     });
-      this.orphServ.getOrphanList().subscribe(orphan =>{
+      this.orphServ.getPendingList().subscribe(orphan =>{
         this.orphan = orphan;
         this.totalOrphans = orphan.length;
       });
-      this.privServ.getPrivateList().subscribe(privater =>{
+      this.privServ.getPendingList().subscribe(privater =>{
         this.privates = privater;
         this.totalPrivate = privater.length;
       });

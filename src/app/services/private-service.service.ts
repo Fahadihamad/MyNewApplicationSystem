@@ -13,6 +13,7 @@ export class PrivateServiceService {
   getById="http://localhost:8898/api/private/get"
   update="http://localhost:8898/api/private/update"
   delete="http://localhost:8898/api/private/delete"
+  pending="http://localhost:8898/api/private/pending"
   apiUrlAcc="http://localhost:8898/api/private/accept"
   apiUrlRej="http://localhost:8898/api/private/reject"
   private baseUrl = 'http://localhost:8898/api/private'
@@ -63,6 +64,10 @@ getAcceptedList():Observable<Private[]>{
 getRejectedList():Observable<Private[]>{
      
   return this.http.get<Private[]>(`${this.apiUrlRej}`)
+}
+getPendingList():Observable<Private[]>{
+     
+  return this.http.get<Private[]>(`${this.pending}`)
 }
 
 }

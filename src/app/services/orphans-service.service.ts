@@ -12,6 +12,7 @@ export class OrphansServiceService  {
   getById="http://localhost:8898/api/orphan/get"
   update="http://localhost:8898/api/orphan/update"
   delete="http://localhost:8898/api/orphan/delete"
+  pending="http://localhost:8898/api/orphan/pending"
   apiUrlAcc="http://localhost:8898/api/orphan/accept"
   apiUrlRej="http://localhost:8898/api/orphan/reject"
   private baseUrl = 'http://localhost:8898/api/orphan'
@@ -63,6 +64,10 @@ getAcceptedList():Observable<Orphans[]>{
 getRejectedList():Observable<Orphans[]>{
      
   return this.http.get<Orphans[]>(`${this.apiUrlRej}`)
+}
+getPendingList():Observable<Orphans[]>{
+     
+  return this.http.get<Orphans[]>(`${this.pending}`)
 }
 
 }

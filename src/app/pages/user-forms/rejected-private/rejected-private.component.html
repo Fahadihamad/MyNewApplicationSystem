@@ -1,1 +1,40 @@
-<p>rejected-private works!</p>
+<app-card Title="" Subtitles="">
+    <div>
+        
+        <h1 >List Of Rejected Private Applications</h1>
+        
+    </div>
+    <div class="container"> 
+    <table class="table table-striped">
+        
+        <thead>
+            <tr style="align-items: start;">
+                <!-- <th>User name</th> -->
+                <th>Date</th>
+                
+                
+                <th>Region</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let private of privates">
+                <!-- <td>{{staffs.userName}}</td> -->
+                <td>{{private.date}}</td>
+                
+                
+                <td>{{private.region}}</td>
+                <td data-label="Actions">
+
+                    <button  (click)="PrivateDetails(private.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
+       
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</app-card>
+
+

@@ -36,7 +36,7 @@
             <div mat-subheader>Menu</div>
             <button mat-list-item routerLink='/userdashh/dashboard'><mat-icon mat-list-icon>dashboard</mat-icon>Dashboard</button>
             <mat-divider></mat-divider>
-            <button mat-list-item routerLink='/userdashh/userhome'><mat-icon mat-list-icon>home</mat-icon>Home</button>
+    
             <button mat-list-item routerLink='/userdashh/'><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
             
             <button mat-list-item class="btn dropdown-toggle" (click)="toggleDropdown()" *ngIf="match.roleMatch(['Admin','Applicant'])"><mat-icon mat-list-icon>add_circle</mat-icon>Send Application</button>

@@ -12,6 +12,7 @@ export class MadrasaServiceService {
   getById="http://localhost:8898/api/madrasa/get"
   update="http://localhost:8898/api/madrasa/update"
   delete="http://localhost:8898/api/madrasa/delete"
+  pending="http://localhost:8898/api/madrasa/pending"
   apiUrlAcc="http://localhost:8898/api/madrasa/accept"
   apiUrlRej="http://localhost:8898/api/madrasa/reject"
   // accepted="http://localhost:8898/api/madrasa/accepted"
@@ -64,5 +65,9 @@ getAcceptedList():Observable<Madrasa[]>{
 getRejectedList():Observable<Madrasa[]>{
      
   return this.http.get<Madrasa[]>(`${this.apiUrlRej}`)
+}
+getPendingList():Observable<Madrasa[]>{
+     
+  return this.http.get<Madrasa[]>(`${this.pending}`)
 }
 }
