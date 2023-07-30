@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Private } from 'src/app/private';
 import { LoginServiceService } from 'src/app/services/login-service.service';
 import { PrivateServiceService } from 'src/app/services/private-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-private-list',
@@ -37,10 +38,30 @@ export class PrivateListComponent implements OnInit {
   
   }
   deletePrivate(id:number){
-  this.privateSrve.deletePrivate(id).subscribe(data=>{
-     console.log(data);
-    this.getAllPrivate();
-  });
+    Swal.fire({
+      title:'Are you want to delete?',
+      text:'You will not able to recover it',
+      icon:'warning',
+      showCancelButton:true,
+      confirmButtonText:'Yes delete it',
+      cancelButtonText:'Not keep it',
+    }).then((result)=>{
+      if(result.value){
+        this.privateSrve.deletePrivate(id).subscribe(data=>{
+          console.log(data);
+         this.getAllPrivate();
+       });
+
+        Swal.fire(
+          'deleted!',
+          'Application has been deleted.',
+          'success'
+        );
+      }else if(result.dismiss==Swal.DismissReason.cancel){
+        Swal.fire('Cancelled','Your Application is safe:)','error');
+      }
+    })
+ 
   }
   acceptApplication(id: number) {
     this.privateSrve.acceptApplication(id).subscribe(
@@ -64,6 +85,7 @@ export class PrivateListComponent implements OnInit {
           duration:3000,
         });
         // Success handling (e.g., display success message, update UI)
+        this.getAllPrivate();
       },
       (error) => {
         // Error handling (e.g., display error message)
@@ -75,5 +97,16 @@ export class PrivateListComponent implements OnInit {
       this.privates= data;
     })
   }
-
+  getStatusStyle(status:any): {[key:string]:string}{
+    switch (status){
+      case 'Accepted':
+        return {'color':'green'};
+      case 'Rejected':
+        return {'color':'red'};
+      case 'Pending':
+        return {'color':'blue'};
+      default:
+        return {};      
+    }
+  }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Private } from 'src/app/private';
 import { PrivateServiceService } from 'src/app/services/private-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-private-req',
@@ -74,6 +75,7 @@ onSubmitForm(): void {
   this.http.post('http://localhost:8898/api/private/add', formData).subscribe(
     (response: any) => {
       console.log('Masjid_build created successfully:', response);
+      Swal.fire("Thank you",'You submitted succefully','success');
       // Reset the form
       this.private = {
         id:'',
@@ -97,6 +99,7 @@ onSubmitForm(): void {
     },
     (error: any) => {
       console.error('Error creating Masjid_build:', error);
+      Swal.fire("Error",'Something went wrong','success');
     }
   );
 }

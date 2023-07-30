@@ -23,7 +23,7 @@
                 
                 <td>{{masjid.date}}</td>
                 
-                <td>{{masjid.status}}</td>
+                <td><b [ngStyle]="getStatusStyle(masjid.status)">{{masjid.status}}</b></td>
                 <td>
                     <button  (click)="updateMasjid(masjid.id)" class="btn btn-primary">update</button>
                     <button  (click)="deleteMasjid(masjid.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>

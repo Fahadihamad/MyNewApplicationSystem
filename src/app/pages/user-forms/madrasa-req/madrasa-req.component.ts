@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Madrasa } from 'src/app/madrasa';
 import { MadrasaServiceService } from 'src/app/services/madrasa-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-madrasa-req',
@@ -39,47 +40,7 @@ export class MadrasaReqComponent implements OnInit{
   ngOnInit(): void {
     
   }
-  // onSubmitForm(){
-  //   this.madrasaService.addMadrasaReq(this.madrasa).subscribe(data=>{
-  //     console.log(data);
-  //     this.snack.open('Your Application sent successfull !! Wait for response','',{
-  //       duration:3000,
-  //     });
-  //   },
-  //   error=>console.log(error));
-  //   this.snack.open('Error Occurred','',{
-  //     duration:3000,
-  //   })
-  // }
   
-  // onFileSelected(event: any) {
-  //   this.selectedFile = event.target.files[0];
-  //   // this.previewImage();
-  // }
-
-  
-  //   onUpload() {
-  //     if (this.selectedFile) {
-  //       const formData = new FormData();
-  //       formData.append('file', this.selectedFile);
-  //       formData.append('name', this.madrasa.letter);
-  
-  //       this.http.post('http://localhost:8898/api/madrasa/upload', formData)
-  //         .subscribe((response: any) => {
-  //           console.log('File uploaded successfully');
-  //           // Handle response if needed
-  //       });
-  //   }
-  // }
-
-  // previewImage() {
-  //   const reader = new FileReader();
-  //   reader.onload = (event) => {
-  //     this.imageUrl = event.target?.result;
-  //   };
-  //   reader.readAsDataURL(this.selectedFile as Blob);
-  // }
-
   onSubmitForm(): void {
     const formData = new FormData();
     
@@ -109,6 +70,8 @@ export class MadrasaReqComponent implements OnInit{
     this.http.post('http://localhost:8898/api/madrasa/add', formData).subscribe(
       (response: any) => {
         console.log('Masjid_build created successfully:', response);
+        Swal.fire("Thank you",'You submitted succefully','success');
+        
         // Reset the form
         this.madrasa = {
           id:'',
@@ -135,6 +98,7 @@ export class MadrasaReqComponent implements OnInit{
       },
       (error: any) => {
         console.error('Error creating Masjid_build:', error);
+        Swal.fire("Error",'Something went wrong','success');
       }
     );
   }

@@ -151,7 +151,7 @@ const routes: Routes = [
         component:UpdateStaffComponent
       },
       {
-        path:'view/:id',
+        path:'viewStaff/:id',
         component:StaffdetailsComponent
       },
       

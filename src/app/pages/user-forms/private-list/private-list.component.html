@@ -24,7 +24,7 @@
                 <td>{{private.date}}</td>
                 
                 
-                <td>{{private.status}}</td>
+                <td ><b [ngStyle]="getStatusStyle(private.status)">{{private.status}}</b></td>
                 <td data-label="Actions">
                     <button  (click)="updatePrivate(private.id)" class="btn btn-warning" >update</button>
                     <button  (click)="deletePrivate(private.id)" class="btn btn-danger" >delete</button>

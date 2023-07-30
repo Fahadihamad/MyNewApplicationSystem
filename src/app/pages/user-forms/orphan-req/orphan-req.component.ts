@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Orphans } from 'src/app/orphans';
 import { OrphansServiceService } from 'src/app/services/orphans-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orphan-req',
@@ -73,6 +74,7 @@ export class OrphanReqComponent implements OnInit {
     this.http.post('http://localhost:8898/api/orphan/add', formData).subscribe(
       (response: any) => {
         console.log('Masjid_build created successfully:', response);
+        Swal.fire("Thank you",'You submitted succefully','success');
         // Reset the form
         this.orphan = {
           id:'',
@@ -95,6 +97,7 @@ export class OrphanReqComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error creating Masjid_build:', error);
+        Swal.fire("Error",'Something went wrong','success');
       }
     );
   }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Masjid } from 'src/app/masjid';
 import { LoginServiceService } from 'src/app/services/login-service.service';
 import { MasjidServiceService } from 'src/app/services/masjid-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-masjidreq-list',
@@ -33,10 +34,30 @@ export class MasjidreqListComponent implements OnInit {
   
   }
   deleteMasjid(id:number){
-  this.masjid.deleteMasjid(id).subscribe(data=>{
-     console.log(data);
-    this.getAllMasjid();
-  });
+    Swal.fire({
+      title:'Are you want to delete?',
+      text:'You will not able to recover it',
+      icon:'warning',
+      showCancelButton:true,
+      confirmButtonText:'Yes delete it',
+      cancelButtonText:'Not keep it',
+    }).then((result)=>{
+      if(result.value){
+        this.masjid.deleteMasjid(id).subscribe(data=>{
+          console.log(data);
+         this.getAllMasjid();
+       });
+
+        Swal.fire(
+          'deleted!',
+          'Application has been deleted.',
+          'success'
+        );
+      }else if(result.dismiss==Swal.DismissReason.cancel){
+        Swal.fire('Cancelled','Your Application is safe:)','error');
+      }
+    })
+ 
   }
   acceptApplication(id: number) {
     this.masjid.acceptApplication(id).subscribe(
@@ -75,6 +96,18 @@ export class MasjidreqListComponent implements OnInit {
     this.masjid.getAcceptedList().subscribe(data=>{
       this.masjids= data;
     })
+  }
+  getStatusStyle(status:any): {[key:string]:string}{
+    switch (status){
+      case 'Accepted':
+        return {'color':'green'};
+      case 'Rejected':
+        return {'color':'red'};
+      case 'Pending':
+        return {'color':'blue'};
+      default:
+        return {};      
+    }
   }
   }
 

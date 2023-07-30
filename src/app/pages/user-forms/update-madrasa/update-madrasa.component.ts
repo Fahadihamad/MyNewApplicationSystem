@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Madrasa } from 'src/app/madrasa';
 import { MadrasaServiceService } from 'src/app/services/madrasa-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-madrasa',
@@ -29,13 +30,14 @@ ngOnInit(): void {
 
 onSubmitForm(){
  this.madrasaservice.updateMadrasa(this.id, this.madrasa).subscribe(data=> {
-  this.snack.open('Successfull Updated!!','Wait for respond',{
-    duration:3000,
-  });
+  // this.snack.open('Successfull Updated!!','Wait for respond',{
+  //   duration:3000,
+  // });
+  Swal.fire("Thank you",'Application updated successfully','error');
    this.goToMadrasaList();
  },
   error=>console.log(error));
-  
+  Swal.fire("Error",'Application not updated','error');
 }
 goToMadrasaList(){
  return this.router.navigate(['/userdashh/madrasareq'])

@@ -5,3 +5,6 @@ button{
 table{
     width: 100%;
 }
+.custom-swal-modal {
+    max-width: 200px; 
+  }

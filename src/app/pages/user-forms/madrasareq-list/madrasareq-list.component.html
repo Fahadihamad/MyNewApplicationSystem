@@ -19,15 +19,15 @@
         </thead>
     
         <tbody>
-            <tr *ngFor="let madrasa of madrast">
+            <tr *ngFor="let madrasa of madrast" >
                 <!-- <td>{{staffs.userName}}</td> -->
                 <td>{{madrasa.date}}</td>
                 
                 
-                <td><b style="color: purple ;">{{madrasa.status}}</b></td>
+                <td><b [ngStyle]="getStatusStyle(madrasa.status)">{{madrasa.status}}</b></td>
                 <td data-label="Actions">
                     <button  (click)="updateMadrasa(madrasa.id)" class="btn btn-primary" style="margin-left: 10px;">update</button>
-                    <button  (click)="deleteMadrasa(madrasa.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>
+                    <button class="custom-swal-modal"  (click)="deleteMadrasa(madrasa.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>
                     <button  (click)="MadrasaDetails(madrasa.id)" class="btn btn-info" style="margin-left: 10px;">view</button>
                     <button (click)="acceptApplication(madrasa.id)" class="btn btn-success" style="margin-left: 10px;" *ngIf="match.roleMatch(['Staff','Admin'])">Accept</button>
                     <button (click)="rejectApplication(madrasa.id)" class="btn btn-danger" style="margin-left: 10px;" *ngIf="match.roleMatch(['Staff','Admin'])">Reject</button>

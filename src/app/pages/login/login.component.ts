@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginServiceService } from 'src/app/services/login-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
     }
       this.login.generateToken(this.LoginData).subscribe(
         (data:any)=>{
+          Swal.fire("Thank you",'Login success','success');
           console.log("succesfull");
           console.log(data);
 
@@ -96,9 +98,10 @@ export class LoginComponent implements OnInit {
         (error)=>{
           console.log("error");
           console.log(error);
-          this.snack.open('Invalid details !! try again','',{
-            duration:3000,
-          });
+          // this.snack.open('Invalid details !! try again','',{
+          //   duration:3000,
+          // });
+          Swal.fire("Error",'Invalid details!! try again','error');
 
         }
       )

@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Orphans } from 'src/app/orphans';
 import { OrphansServiceService } from 'src/app/services/orphans-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orphan-update',
@@ -31,13 +32,14 @@ ngOnInit(): void {
 
 onSubmitForm(){
  this.orphanservice.updateOrphan(this.id, this.orphan).subscribe(data=> {
-  this.snack.open('Successfull Updated!!','Wait for respond',{
-    duration:3000,
-  });
+  // this.snack.open('Successfull Updated!!','Wait for respond',{
+  //   duration:3000,
+  // });
+  Swal.fire("Thank you",'Application updated successfully','error');
    this.goToOrphanList();
  },
   error=>console.log(error));
-  
+  Swal.fire("Error",'Application not updated','error');
 }
 goToOrphanList(){
  return this.router.navigate(['/userdashh/orphanreq'])

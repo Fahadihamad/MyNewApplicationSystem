@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 import { UserService } from 'src/app/services/user.service';
 import { Sponsor } from 'src/app/sponsor';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sponsor-sign',
@@ -39,10 +40,11 @@ export class SponsorSignComponent implements OnInit{
       console.log(data);
 
       // alert("succesfull")
-      this.snack.open("success !!",'',{
-        duration:300
+      // this.snack.open("success !!",'',{
+      //   duration:500
         
-      });
+      // });
+      Swal.fire("Thank you",'Acount registered succesfully','error');
 
       this.router.navigate(['/login']);
 
@@ -52,9 +54,10 @@ export class SponsorSignComponent implements OnInit{
       console.log(error);
 
       // alert("something went wrong")
-       this.snack.open("something went wrong !!",'',{
-        duration:300
-       });
+      //  this.snack.open("something went wrong OR userName is already exist!!",'',{
+      //   duration:500
+      //  });
+      Swal.fire("Error",'Something went wrong Or UserName already exist','error');
     }
    );
 

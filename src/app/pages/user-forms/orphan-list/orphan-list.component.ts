@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Orphans } from 'src/app/orphans';
 import { LoginServiceService } from 'src/app/services/login-service.service';
 import { OrphansServiceService } from 'src/app/services/orphans-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orphan-list',
@@ -33,10 +34,30 @@ orphan:Orphans[]=[];
   
   }
   deleteOrphans(id:number){
-  this.orphanSrve.deleteOrphan(id).subscribe(data=>{
-     console.log(data);
-    this.getAllOrphans();
-  });
+    Swal.fire({
+      title:'Are you want to delete?',
+      text:'You will not able to recover it',
+      icon:'warning',
+      showCancelButton:true,
+      confirmButtonText:'Yes delete it',
+      cancelButtonText:'Not keep it',
+    }).then((result)=>{
+      if(result.value){
+        this.orphanSrve.deleteOrphan(id).subscribe(data=>{
+          console.log(data);
+         this.getAllOrphans();
+       });
+
+        Swal.fire(
+          'deleted!',
+          'Application has been deleted.',
+          'success'
+        );
+      }else if(result.dismiss==Swal.DismissReason.cancel){
+        Swal.fire('Cancelled','Your Application is safe:)','error');
+      }
+    })
+ 
   }
   acceptApplication(id: number) {
     this.orphanSrve.acceptApplication(id).subscribe(
@@ -71,5 +92,17 @@ orphan:Orphans[]=[];
     this.orphanSrve.getAcceptedList().subscribe(data=>{
       this.orphan= data;
     })
+  }
+  getStatusStyle(status:any): {[key:string]:string}{
+    switch (status){
+      case 'Accepted':
+        return {'color':'green'};
+      case 'Rejected':
+        return {'color':'red'};
+      case 'Pending':
+        return {'color':'blue'};
+      default:
+        return {};      
+    }
   }
 }

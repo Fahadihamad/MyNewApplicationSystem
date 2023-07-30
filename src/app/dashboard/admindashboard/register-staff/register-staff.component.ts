@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { StaffsService } from 'src/app/services/staffs.service';
 import { Staffs } from 'src/app/staffs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-staff',
@@ -24,13 +25,14 @@ export class RegisterStaffComponent implements OnInit{
     this.staffservice.createStaff(this.staffs).subscribe(data=>{
        console.log(data);
        this.goToStaffList();
-       this.snack.open('Succesfull staff regestered','',{
-        duration:3000,
-      });
+      //  this.snack.open('Succesfull staff regestered','',{
+      //   duration:3000,
+      // });
+      Swal.fire("Thank you",'succefully staff regestered','success');
     },
     error=>{
       console.log('exception occured');
-    this.msg= error.error;
+      Swal.fire("Error",'Something went wrong Or UserName already exist','error');
     }
     )
     

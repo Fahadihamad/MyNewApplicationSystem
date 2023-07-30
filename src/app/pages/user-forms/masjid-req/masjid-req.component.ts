@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Masjid } from 'src/app/masjid';
 import { MasjidServiceService } from 'src/app/services/masjid-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-masjid-req',
@@ -11,12 +12,7 @@ import { MasjidServiceService } from 'src/app/services/masjid-service.service';
   styleUrls: ['./masjid-req.component.css']
 })
 export class MasjidReqComponent implements OnInit {
-  //  masjid:Masjid = new Masjid();
 
-  //  selectedFile={
-  //    image:'',
-  //    letter:''
-  //  }
 
   massjidBuild={
     id:'',
@@ -74,6 +70,7 @@ export class MasjidReqComponent implements OnInit {
     this.http.post('http://localhost:8898/api/masjid/add', formData).subscribe(
       (response: any) => {
         console.log('Masjid_build created successfully:', response);
+        Swal.fire("Thank you",'You submitted succefully','success');
         // Reset the form
         this.massjidBuild = {
           id:'',
@@ -99,6 +96,7 @@ export class MasjidReqComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error creating Masjid_build:', error);
+        Swal.fire("Error",'Something went wrong','success');
       }
     );
   }

@@ -24,7 +24,7 @@
                 <td>{{orphans.date}}</td>
                 
                 
-                <td>{{orphans.status}}</td>
+                <td><b [ngStyle]="getStatusStyle(orphans.status)">{{orphans.status}}</b></td>
                 <td data-label="Actions">
                     <button  (click)="updateOrphans(orphans.id)" class="btn btn-primary" style="margin-left: 10px;">update</button>
                     <button  (click)="deleteOrphans(orphans.id)" class="btn btn-danger" style="margin-left: 10px;">delete</button>

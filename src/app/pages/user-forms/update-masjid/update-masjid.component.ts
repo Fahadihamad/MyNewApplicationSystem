@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Masjid } from 'src/app/masjid';
 import { MasjidServiceService } from 'src/app/services/masjid-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-masjid',
@@ -29,14 +30,15 @@ ngOnInit(): void {
 
 onSubmitForm(){
   this.masjidservice.updateMasjid(this.id, this.masjid).subscribe(data=> {
-    this.snack.open('Updated successfull !! Wait for response','',{
-      duration:3000,
-    });
+    // this.snack.open('Updated successfull !! Wait for response','',{
+    //   duration:3000,
+    // });
+    Swal.fire("Thank you",'Application updated','success');
    
     this.goToMasjidList();
   },
    error=>console.log(error));
-   
+   Swal.fire("Error",'Application didnt updated','error');
 }
 goToMasjidList(){
   return this.router.navigate(['/userdashh/masjidreq'])
